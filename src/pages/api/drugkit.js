@@ -1,0 +1,15 @@
+import dbConnect from "../../../Db/DbConnect"
+import Drugkit from "../../../Db/models/drugkit";
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+
+export default async function handler(request, response) {
+  await dbConnect();
+
+  if (request.method === "GET") {
+    const drugkit = await Drugkit.find();
+    console.log("Test", drugkit);
+    return response.status(200).json(drugkit);
+  } else {
+  //   return response.status(405).json({ message: "Method not allowed" });
+  }
+}
