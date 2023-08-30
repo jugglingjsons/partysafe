@@ -2,26 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: #333;  /* Dark Grey Text */
+  background-color: #fff; /* White Background */
+  font-family: 'Georgia', serif; /* Classic font */
+  line-height: 1.6; /* Improved readability */
 }
+
+
+.product-name, /* directly targeting product name */
+h1, h2, h3, h4, h5, h6 { /* targeting all headers, assuming product name could be any of these */
+  color: #333;  /* Dark Grey Text */
+}
+
+/* Make sure inputs and buttons are more touch-friendly on mobile */
+input, button {
+  padding: 12px;
+  font-size: 16px;
+}
+
+/* A little spacing between paragraphs for better readability */
+p {
+  margin-bottom: 1rem;
+}
+
+/* If you want to set a max-width for readability on larger devices */
+.container {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* To ensure padding on the edges so content doesn't touch the edge */
+body {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* You can add any other styles that you see fit to enhance the look and feel */
