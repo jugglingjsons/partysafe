@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import useSWR from 'swr';
 import { useState, useEffect } from 'react';
-import { HomeIcon, HeartIcon, ShoppingCartIcon, UserIcon } from '@heroicons/react/solid';
+import { HomeIcon, HeartIcon, LibraryIcon, SupportIcon, ChatIcon } from '@heroicons/react/solid';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -37,16 +37,7 @@ export default function Home() {
 
     return (
         <div className="bg-white min-h-screen text-gray-800">
-            <header className="flex flex-col items-center justify-center p-4">
-                <Image src="/logo.png" alt="Logo" width={450} height={450} />
-                <div className="py-2 w-full max-w-lg">
-                    <input 
-                        type="text" 
-                        placeholder="Search..." 
-                        className="rounded p-2 w-full border border-gray-400"
-                    />
-                </div>
-            </header>
+            {/* Removed <Header /> */}
             
             <main className="p-4 grid grid-cols-3 gap-4">
                 {products.map(product => (
@@ -68,15 +59,6 @@ export default function Home() {
                 ))}
             </main>
 
-            <footer className="bg-gray-800 p-4 text-white fixed bottom-0 left-0 w-full">
-                <div className="flex justify-between">
-                    <Link href="/"><HomeIcon className="h-6 w-6" /></Link>
-                    <Link href="/favorites"><HeartIcon className="h-6 w-6" /></Link>
-                    <Link href="/cart"><ShoppingCartIcon className="h-6 w-6" /></Link>
-                    <Link href="/account"><UserIcon className="h-6 w-6" /></Link>
-                </div>
-            </footer>
         </div>
     );
 }
-

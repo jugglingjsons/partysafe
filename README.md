@@ -1,38 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+PartySafe
 
-## Getting Started
+A web application built with Next.js for viewing and favoriting drugkits. Deployed on Vercel.
+Table of Contents
 
-First, run the development server:
+    Features
+    Setup and Installation
+    Deployment with Vercel
+    Usage
+    Contributing
+    License
 
-```bash
+Features
+
+    User Authentication: Secure signup and login functionality with NextAuth.js.
+    Browse Products: Users can view all available drugkits.
+    Favorites: Users can favorite drugkits and view them later.
+    Responsive Design: Suitable for desktop and mobile devices.
+
+Setup and Installation
+Prerequisites:
+
+    Node.js
+    MongoDB
+
+Steps:
+
+    Clone the repository:
+
+bash
+
+git clone [repository-url]
+
+    Navigate to the PartySafe directory:
+
+bash
+
+cd PartySafe
+
+    Install the required dependencies:
+
+bash
+
+npm install
+
+    Set up your .env.local file with the necessary environment variables, like the MongoDB URI and NextAuth.js configurations.
+
+    Start the development server:
+
+bash
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application should now be running at http://localhost:3000/.
+Deployment with Vercel
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+    Install the Vercel CLI:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+bash
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+npm install -g vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    Deploy the application:
 
-## Learn More
+bash
 
-To learn more about Next.js, take a look at the following resources:
+vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Follow the prompts to deploy your application. Once deployed, Vercel will provide you with a live URL.
+Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+After setting up PartySafe, you can:
 
-## Deploy on Vercel
+    Navigate to the homepage to view all drugkits.
+    Sign up or log in to access user-specific features like favoriting drugkits.
+    Visit the favorites page to view all your liked drugkits.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+License
+
+MIT
+
+Remember to replace placeholders like [repository-url] with your specific details. The README should be updated as your project evolves, adding more details or modifying existing information as needed.
