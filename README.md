@@ -1,6 +1,6 @@
 PartySafe
 
-A web application built with Next.js for viewing and favoriting drugkits. Deployed on Vercel.
+A web application built with Next.js to buy drugkits. Deployed on Vercel.
 Table of Contents
 
     Features

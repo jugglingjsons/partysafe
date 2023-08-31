@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { HomeIcon, HeartIcon, ShoppingCartIcon, UserIcon, BookOpenIcon, HandIcon, ChatIcon } from '@heroicons/react/solid';
+import { useRouter } from 'next/router';
+import { HomeIcon, HeartIcon, ShoppingCartIcon, UserIcon, BookOpenIcon, HandIcon, ChatIcon, QuestionMarkCircleIcon } from '@heroicons/react/solid';
 
 function Footer() {
     return (
@@ -26,6 +27,9 @@ function Footer() {
                 </Link>
                 <Link href="/account">
                     <UserIcon className="h-6 w-6 mx-2 hover:text-gray-400 cursor-pointer" />
+                </Link>
+                <Link href="/about">
+                    <QuestionMarkCircleIcon className="h-6 w-6 mx-2 hover:text-gray-400 cursor-pointer" />
                 </Link>
             </div>
             <p className="text-center mt-4">© 2023 PartySafe. All rights reserved.</p>
