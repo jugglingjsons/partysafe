@@ -1,5 +1,8 @@
 import useSWR from 'swr';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { HeartIcon } from '@heroicons/react/solid';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -11,13 +14,24 @@ export default function Favorites() {
     return (
         <div className="bg-white min-h-screen text-gray-800">
             <h1 className="text-center my-4">Your Favorites</h1>
-            <div className="p-4 grid grid-cols-3 gap-4">
+            <main className="p-4 grid grid-cols-3 gap-4">
                 {likedProducts.map(product => (
                     <div key={product._id} className="border p-2 rounded">
-                        {/* Display the product details similar to how you did on the home page */}
+                        <Link href={`/drugkit/${product._id}`}>
+                            <h2 className="text-center mb-2">{product.name}</h2>
+                            <Image 
+                                src={product.image_url}
+                                alt={product.name}
+                                width={100}
+                                height={100}
+                            />
+                        </Link>
+                        <button className="like-button mt-2">
+                            <HeartIcon className="h-5 w-5 text-red-500" />
+                        </button>
                     </div>
                 ))}
-            </div>
+            </main>
         </div>
     );
 }

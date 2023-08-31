@@ -47,13 +47,13 @@ export default function Home() {
                 {products.map(product => (
                     <div key={product._id} className="border p-2 rounded">
                         <Link href={`/drugkit/${product._id}`}>
-                        <h2 className="text-center mb-2">{product.name}</h2>
-                        <Image 
-                            src={product.image_url}
-                            alt={product.name}
-                            width={100}
-                            height={100}
-                        />
+                            <h2 className="text-center mb-2">{product.name}</h2>
+                            <img 
+                                src={product.image_url}
+                                alt={product.name}
+                                width={100}
+                                height={100}
+                            />
                         </Link>
 
                         <button className="like-button mt-2" onClick={() => toggleLike(product)}>
