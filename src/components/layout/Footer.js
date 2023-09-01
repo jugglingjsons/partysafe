@@ -5,8 +5,8 @@ import { HomeIcon, HeartIcon, ShoppingCartIcon, UserIcon, BookOpenIcon, HandIcon
 
 function Footer() {
     return (
-        <footer className="bg-gray-800 p-4 text-white fixed bottom-0 left-0 w-full">
-            <div className="flex justify-between px-4">
+        <footer className="bg-gray-800 p-4 text-white">
+            <div className="flex justify-between px-4 max-w-5xl mx-auto">
                 <Link href="/">
                     <HomeIcon className="h-6 w-6 mx-2 hover:text-gray-400 cursor-pointer" />
                 </Link>

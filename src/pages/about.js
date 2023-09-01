@@ -1,6 +1,6 @@
-// pages/about.js
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const About = () => {
     return (
@@ -10,20 +10,38 @@ const About = () => {
             </header>
 
             <main className="p-4">
-                <h1 className="text-2xl font-semibold mb-4">About Us</h1>
-                <p className="mb-6">
-                    At PartySafe, our mission is to make drug use safer for everyone. We believe that everybody has the right to know what's inside the drugs they are consuming. Our goal is to provide drug kit tests that empower individuals to make informed decisions about their drug use.
-                </p>
-                <p className="mb-6">
-                    Our drug kit tests are designed to help you understand the composition of your drugs, identify potential risks, and reduce harm. By offering reliable testing solutions, we aim to promote safer drug use practices and create a more responsible and conscious community.
-                </p>
-                <h2 className="text-xl font-semibold mb-2">What are Drug Kit Tests?</h2>
-                <p className="mb-6">
-                    Drug kit tests, also known as reagent tests or pill testing, involve using chemical reagents to analyze the composition of a substance. These tests can provide valuable information about the presence of certain substances and help users identify potential adulterants or contaminants in their drugs.
-                </p>
-                <p className="mb-6">
-                    By using our drug kit tests, you can gain insights into the composition of your substances and make informed choices to minimize potential risks. We are committed to providing you with accurate and easy-to-use testing solutions to enhance your safety and well-being.
-                </p>
+                <section className="mb-6">
+                    <h1 className="text-2xl font-semibold mb-4">Our Story</h1>
+                    <p className="mb-6">
+                        PartySafe was born from a young entrepreneur's journey in Berlin. After living in this vibrant city for over 8 years, I couldn't ignore the prevalence of drugs misuse and overuse in clubs and festivals. The idea to provide accurate and accessible information about drugs took shape during my time at Spiced Academy's Full Stack Web Development bootcamp in Berlin.
+                    </p>
+                    <p className="mb-6">
+                        With a commitment to harm reduction and the goal of making drug use safer, PartySafe began its journey. Our mission is to empower individuals with reliable drug testing kits and harm reduction resources, creating a safer and more informed community in recreational settings.
+                    </p>
+                </section>
+
+                <section className="mb-6">
+                    <h2 className="text-2xl font-semibold mb-4">Where We Are Now</h2>
+                    <p className="mb-6">
+                        At PartySafe, we are still in the early stages of bringing our vision to life. Our journey has just begun, and we are excited to take steps towards enhancing the safety and well-being of individuals in recreational settings. While we continue to grow and evolve, our commitment to harm reduction and promoting safer drug use practices remains steadfast.
+                    </p>
+                </section>
+
+                <section className="mb-6">
+                    <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
+                    <p className="mb-6">
+                        Our mission is to make drug use safer for everyone. We believe that everybody has the right to know what's inside the drugs they are consuming. Our goal is to provide drug kit tests that empower individuals to make informed decisions about their drug use. By offering reliable testing solutions, we aim to promote safer drug use practices and create a more responsible and conscious community.
+                    </p>
+                    <p className="mb-6">
+                        Our commitment extends to providing accurate and easy-to-use testing solutions to enhance safety and well-being. We are driven by the belief that harm reduction is essential, and every individual deserves the tools to make informed choices.
+                    </p>
+                </section>
+
+                <div className="text-center mb-4">
+                    <a href="mailto:info@partysafe.app" className="text-blue-500 hover:underline transition duration-300">
+                        Contact Us: info@partysafe.app
+                    </a>
+                </div>
             </main>
         </div>
     );
