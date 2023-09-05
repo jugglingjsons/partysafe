@@ -9,7 +9,5 @@ export default async function handler(request, response) {
     const drugkit = await Drugkit.find();
     console.log("Test", drugkit);
     return response.status(200).json(drugkit);
-  } else {
-  //   return response.status(405).json({ message: "Method not allowed" });
-  }
+  } 
 }

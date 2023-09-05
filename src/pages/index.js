@@ -10,15 +10,19 @@ export default function Home() {
     const [likedProducts, setLikedProducts] = useState([]);
 
     useEffect(() => {
-        const storedLikes = localStorage.getItem('likedProducts');
-        if (storedLikes) {
-            setLikedProducts(JSON.parse(storedLikes));
+        // Fetch liked products from API
+        async function fetchLikedProducts() {
+            try {
+                const response = await fetch('/api/favorites');
+                const data = await response.json();
+                setLikedProducts(data);
+            } catch (error) {
+                console.error('Error fetching liked products:', error);
+            }
         }
-    }, []);
 
-    useEffect(() => {
-        localStorage.setItem('likedProducts', JSON.stringify(likedProducts));
-    }, [likedProducts]);
+        fetchLikedProducts();
+    }, []);
 
     const toggleLike = async (product) => {
         // Toggle like logic
@@ -45,6 +49,7 @@ export default function Home() {
                         key={product._id}
                         drugkit={product}
                         onLike={toggleLike}
+                        likedProducts={likedProducts}
                     />
                 ))}
             </main>

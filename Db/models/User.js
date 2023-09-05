@@ -2,13 +2,13 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
-const drugkitSchema = new Schema({
+const userSchema = new Schema({
   nickname: { type: String, required: true },
   email: { type: String, required: true },
-  favorites: [{type: mongoose.Schema.Types.ObjecticId, ref: 'Drugkit'}],
+  // favorites: {type: Array, default: []},
   admin: {type: Boolean, default: false}
 });
 
-const Drugkit = mongoose.models.Drugkit || mongoose.model("Drugkit", drugkitSchema);
+const User = mongoose.models.User || mongoose.model("User", userSchema);
 
-export default Drugkit;
+export default User;

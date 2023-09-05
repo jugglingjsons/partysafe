@@ -1,5 +1,6 @@
+// pages/favorites.js
+
 import useSWR from 'swr';
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HeartIcon } from '@heroicons/react/solid';
@@ -7,7 +8,7 @@ import { HeartIcon } from '@heroicons/react/solid';
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Favorites() {
-    const { data: likedProducts } = useSWR('/api/drugkit/liked', fetcher); // Change the API endpoint to fetch liked products
+    const { data: likedProducts } = useSWR('/api/favorites', fetcher);
 
     if (!likedProducts) return <div>Loading...</div>;
 
@@ -26,6 +27,8 @@ export default function Favorites() {
                                 height={100}
                             />
                         </Link>
+                        <p>{product.description}</p>
+                        <p>Price: {product.price}</p>
                         <button className="like-button mt-2">
                             <HeartIcon className="h-5 w-5 text-red-500" />
                         </button>
@@ -35,3 +38,4 @@ export default function Favorites() {
         </div>
     );
 }
+
