@@ -43,7 +43,7 @@ export default function Home() {
 
     return (
         <div className="bg-white min-h-screen text-gray-800">
-            <main className="p-4 grid grid-cols-3 gap-4">
+            <main className="p-4 grid grid-cols-2 gap-4">
                 {products.map(product => (
                     <DrugkitCardThumbnail
                         key={product._id}
