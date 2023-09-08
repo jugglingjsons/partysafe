@@ -5,7 +5,7 @@ import { BookOpenIcon, HandIcon, ChatIcon, HeartIcon, QuestionMarkCircleIcon } f
 function Footer() {
     return (
         <footer className="bg-gray-800 p-2 text-white">
-            <div className="flex justify-center px-4 max-w-7xl mx-auto space-x-36">
+            <div className="flex justify-center px-4 max-w-7xl mx-auto space-x-5">
                 <Link href="/library" passHref>
                     <div className="flex flex-col items-center">
                         <BookOpenIcon className="h-6 w-6" />

@@ -47,21 +47,21 @@ const Header = () => {
     return (
         <>
             <header className="bg-white shadow-md">
-    <div className="container mx-auto flex justify-between items-center py-6">
-        <Link href="/">
+        <div className="container mx-auto flex justify-between items-center py-6">
+          <Link href="/">
             <div className="cursor-pointer flex-shrink-0">
-                <Image src="/newlogo2.png" alt="PartySafe Logo" width={250} height={250} />
+              <Image src="/newlogo2.png" alt="PartySafe Logo" width={250} height={250} />
             </div>
-        </Link>
-        <div className="flex items-center space-x-4 ml-auto">
-            <Link href="/my-account" passHref>
-                <div className="text-gray-600 cursor-pointer text-lg">My Account</div>
+          </Link>
+          <div className="flex items-center space-x-4 ml-auto">
+            <Link href="/account" passHref>
+              <div className="text-gray-600 cursor-pointer text-lg">My Account</div>
             </Link>
-            <Link href="/checkout" passHref>
-                <div className="text-gray-600 cursor-pointer text-lg">Checkout</div>
+            <Link href="/cart" passHref>
+              <div className="text-gray-600 cursor-pointer text-lg">Checkout</div>
             </Link>
             <Link href="/login" passHref>
-                <div className="text-gray-600 cursor-pointer text-lg">Log In</div>
+              <div className="text-gray-600 cursor-pointer text-lg">Log In</div>
             </Link>
             <div className="relative">
                 <select className="block appearance-none w-full bg-white border border-gray-300 text-gray-350 py-2 px-3 pr-7 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
