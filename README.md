@@ -1,6 +1,6 @@
 PartySafe Drug Kit E-Commerce Platform
 
-PartySafe Logo
+PartySafe newlogo2
 
 PartySafe is an e-commerce platform designed to provide a variety of drug testing kits to assist users in making informed decisions regarding the substances they consume. The platform's primary goal is to promote safer drug use by furnishing users with precise information regarding the composition of their drugs.
 Table of Contents
