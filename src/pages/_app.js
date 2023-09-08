@@ -3,7 +3,7 @@ import { SessionProvider } from 'next-auth/react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 
-export default function App({ Component, pageProps, session }) {
+export default function App({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
       <Header />
