@@ -1,6 +1,7 @@
+// Inside Searchbar.js
 import React, { useState } from 'react';
 
-const Searchbar = ({ onSearch, onClear }) => {
+const Searchbar = ({ onSearch, onClear, placeholder }) => {
     const [searchText, setSearchText] = useState('');
 
     const handleSearch = () => {
@@ -25,7 +26,7 @@ const Searchbar = ({ onSearch, onClear }) => {
             <input
                 type="text"
                 className="w-full border rounded p-2"
-                placeholder="Search drug kits..."
+                placeholder={placeholder} // Use the custom placeholder text here
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
                 onKeyUp={handleKeyUp}
@@ -47,4 +48,3 @@ const Searchbar = ({ onSearch, onClear }) => {
 };
 
 export default Searchbar;
-

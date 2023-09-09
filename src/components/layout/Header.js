@@ -86,14 +86,6 @@ const Header = () => {
                     </p>
                 </div>
 
-                <div className="container mx-auto py-2 w-4/5 max-w-lg mt-4 flex justify-center">
-                    <input 
-                        type="text" 
-                        placeholder="Search your kit..." 
-                        className="rounded-lg p-3 w-full border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:outline-none"
-                    />
-                </div>
-                
                 <div className="container mx-auto text-center mt-4">
                     <Link href="/category-bundles" passHref>
                         <button className="bg-white text-black py-2 px-4 rounded text-lg">Category Bundles</button>

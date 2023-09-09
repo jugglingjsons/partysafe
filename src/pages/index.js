@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import Searchbar from '@/components/ui/Searchbar';
-import DrugkitCardThumbnail from '../components/DrugkitCardThumbnail'; // Import the simplified card component
+import DrugkitCardThumbnail from '../components/DrugkitCardThumbnail';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -10,34 +11,37 @@ export default function Home() {
     const [likedProducts, setLikedProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searchResults, setSearchResults] = useState([]);
-    const [searchQuery, setSearchQuery] = useState('');
+    const [searchQuery, setSearchQuery] = useState('Search your kit in the search bar');
+    const router = useRouter();
+    const isDialoguePage = router.pathname === '/dialogue';
 
     useEffect(() => {
-        // Fetch liked products from API
-        async function fetchLikedProducts() {
+        async function fetchData() {
             try {
-                const response = await fetch('/api/favorites');
+                const response = await fetch('/api/drugkit');
                 const data = await response.json();
-                setLikedProducts(data);
+                setSearchResults(data);
                 setLoading(false);
             } catch (error) {
-                console.error('Error fetching liked products:', error);
+                console.error('Error fetching products:', error);
                 setLoading(false);
             }
         }
 
-        fetchLikedProducts();
+        fetchData();
     }, []);
 
     useEffect(() => {
-        // Filter products based on search query
-        if (searchQuery.trim() === '') {
-            setSearchResults(products);
-        } else {
-            const filteredResults = products.filter((product) =>
-                product.name.toLowerCase().includes(searchQuery.toLowerCase())
-            );
-            setSearchResults(filteredResults);
+        // Ensure products is defined before filtering
+        if (products) {
+            if (searchQuery.trim() !== '') {
+                const filteredResults = products.filter((product) =>
+                    product.name.toLowerCase().includes(searchQuery.toLowerCase())
+                );
+                setSearchResults(filteredResults);
+            } else {
+                setSearchResults(products);
+            }
         }
     }, [searchQuery, products]);
 
@@ -59,14 +63,12 @@ export default function Home() {
         }
     };
 
-    // This function is used to handle the search query from the Searchbar component.
     const handleSearch = (query) => {
         setSearchQuery(query);
     };
 
-    // This function is used to handle clearing the search query and optionally clear search results.
     const handleClear = () => {
-        setSearchQuery('');
+        setSearchQuery('Search your kit in the search bar');
         // Optionally, you can also clear the search results or perform other actions here.
     };
 
@@ -74,7 +76,14 @@ export default function Home() {
 
     return (
         <div className="bg-white min-h-screen text-gray-800">
-            <Searchbar onSearch={handleSearch} onClear={handleClear} />
+            {!isDialoguePage && (
+                <Searchbar
+                    onSearch={handleSearch}
+                    onClear={handleClear}
+                    placeholder="Search drug kits..."
+                    searchText={searchQuery}
+                />
+            )}
             <main className="p-4 grid grid-cols-2 gap-4">
                 {loading ? (
                     <div>Loading...</div>
@@ -92,3 +101,6 @@ export default function Home() {
         </div>
     );
 }
+
+
+
