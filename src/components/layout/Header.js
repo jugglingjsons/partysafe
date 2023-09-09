@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -14,6 +14,9 @@ const Header = () => {
     const router = useRouter();
     const fullSlogan = " Stop wondering what’s inside your drugs. Start making informed decisions. ";
 
+    // Use a ref to store the interval
+    const intervalRef = useRef();
+
     useEffect(() => {
         const timeout = setTimeout(() => {
             setSloganVisible(true);
@@ -25,15 +28,19 @@ const Header = () => {
     useEffect(() => {
         let index = 0;
         if (sloganVisible) {
-            const interval = setInterval(() => {
+            // Assign interval to the ref
+            intervalRef.current = setInterval(() => {
                 if (index < fullSlogan.length) {
                     setSloganText((prev) => prev + fullSlogan[index]);
                     index += 1;
                 } else {
-                    clearInterval(interval);
+                    clearInterval(intervalRef.current);
                 }
-            }, 100); 
+            }, 100);
         }
+
+        // Return cleanup function
+        return () => clearInterval(intervalRef.current);
     }, [sloganVisible]);
 
     useEffect(() => {
@@ -109,3 +116,4 @@ const Header = () => {
 };
 
 export default Header;
+

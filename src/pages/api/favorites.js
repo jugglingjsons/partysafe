@@ -1,63 +1,40 @@
-import useSWR, { mutate } from 'swr';
-import Image from 'next/image';
-import Link from 'next/link';
-import { HeartIcon } from '@heroicons/react/solid';
+import { getSession } from 'next-auth/react';
+import dbConnect from '../../../Db/DbConnect'; // Import your database connection
+import Product from '../product/[id]'; // Import your product model
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+export default async function handler(request, response) {
+  try {
+    const session = await getSession({ req: request });
 
-export default function Favorites() {
-  const { data: likedProducts } = useSWR('/api/favorites', fetcher);
-
-  if (!likedProducts) return <div>Loading...</div>;
-
-  const handleLikeClick = async (productId) => {
-    try {
-      const response = await fetch('/api/favorites', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ productId }),
-      });
-
-      if (response.ok) {
-        // Trigger a re-fetch of liked products after adding
-        mutate('/api/favorites');
-        console.log('Product added to favorites successfully');
-      } else {
-        console.error('Failed to add product to favorites');
-      }
-    } catch (error) {
-      console.error('Error adding product to favorites:', error);
+    if (!session) {
+      return response.status(401).json({ message: 'Unauthorized' });
     }
-  };
 
-  return (
-    <div className="bg-white min-h-screen text-gray-800">
-      <h1 className="text-center my-4">Your Favorites</h1>
-      <main className="p-4 grid grid-cols-3 gap-4">
-        {likedProducts.map((product) => (
-          <div key={product._id} className="border p-2 rounded">
-            <Link href={`/drugkit/${product.productId}`}>
-              <h2 className="text-center mb-2">{product.name}</h2>
-              <Image
-                src={product.image_url}
-                alt={product.name}
-                width={100}
-                height={100}
-              />
-            </Link>
-            <p>{product.description}</p>
-            <p>Price: {product.price}</p>
-            <button
-              className="like-button mt-2"
-              onClick={() => handleLikeClick(product.productId)}
-            >
-              <HeartIcon className="h-5 w-5 text-red-500" />
-            </button>
-          </div>
-        ))}
-      </main>
-    </div>
-  );
+    if (request.method === 'POST') {
+      await dbConnect(); // Connect to your MongoDB database
+
+      // Get the user's ID from the session
+      const userId = session.user.id;
+
+      // Get the product ID you want to add to favorites (assuming you have it)
+      const productId = request.body.productId;
+
+      // Find the product by ID
+      const product = await Product.findById(productId);
+
+      if (!product) {
+        return response.status(404).json({ message: 'Product not found' });
+      }
+
+      // Add the product to the user's favorites
+      await User.findByIdAndUpdate(userId, { $push: { favorites: product } });
+
+      return response.status(200).json({ message: 'Product added to favorites' });
+    } else {
+      return response.status(405).json({ message: 'Method not allowed' });
+    }
+  } catch (error) {
+    console.error('Error adding product to favorites:', error);
+    return response.status(500).json({ message: 'Server error' });
+  }
 }

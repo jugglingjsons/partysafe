@@ -1,7 +1,8 @@
-import useSWR, { mutate } from 'swr';
+import useSWR from 'swr';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HeartIcon } from '@heroicons/react/solid';
+import { getSession } from 'next-auth/react';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -9,28 +10,6 @@ export default function Favorites() {
   const { data: likedProducts } = useSWR('/api/favorites', fetcher);
 
   if (!likedProducts) return <div>Loading...</div>;
-
-  const handleLikeClick = async (productId) => {
-    try {
-      const response = await fetch('/api/favorites', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ productId }),
-      });
-
-      if (response.ok) {
-        // Trigger a re-fetch of liked products after adding
-        mutate('/api/favorites');
-        console.log('Product added to favorites successfully');
-      } else {
-        console.error('Failed to add product to favorites');
-      }
-    } catch (error) {
-      console.error('Error adding product to favorites:', error);
-    }
-  };
 
   return (
     <div className="bg-white min-h-screen text-gray-800">
@@ -49,10 +28,7 @@ export default function Favorites() {
             </Link>
             <p>{product.description}</p>
             <p>Price: {product.price}</p>
-            <button
-              className="like-button mt-2"
-              onClick={() => handleLikeClick(product.productId)}
-            >
+            <button className="like-button mt-2">
               <HeartIcon className="h-5 w-5 text-red-500" />
             </button>
           </div>
@@ -61,5 +37,6 @@ export default function Favorites() {
     </div>
   );
 }
+
 
 

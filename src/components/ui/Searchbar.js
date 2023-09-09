@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
 
-const Searchbar = ({ onSearch }) => {
+const Searchbar = ({ onSearch, onClear }) => {
     const [searchText, setSearchText] = useState('');
 
     const handleSearch = () => {
         if (searchText.trim() !== '') {
             onSearch(searchText);
         }
+    };
+
+    const handleKeyUp = (e) => {
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
+    };
+
+    const handleClear = () => {
+        setSearchText('');
+        onClear(); // Clear the search results in the parent component
     };
 
     return (
@@ -17,6 +28,7 @@ const Searchbar = ({ onSearch }) => {
                 placeholder="Search drug kits..."
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
+                onKeyUp={handleKeyUp}
             />
             <button
                 className="bg-blue-500 text-white py-1 px-2 rounded mt-2"
@@ -24,8 +36,15 @@ const Searchbar = ({ onSearch }) => {
             >
                 Search
             </button>
+            <button
+                className="bg-gray-300 text-gray-600 py-1 px-2 rounded mt-2 ml-2"
+                onClick={handleClear}
+            >
+                Clear
+            </button>
         </div>
     );
 };
 
 export default Searchbar;
+
