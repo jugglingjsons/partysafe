@@ -1,0 +1,1038 @@
+[
+    {
+      "name": "2C-B",
+      "aliases": ["2C-x"],
+      "appearance": "White powder, sometimes in tablet or capsule form",
+      "details": {
+        "description": "A synthetic drug that belongs to the 2C family of psychedelics. It is known for combining psychedelic, euphoric, and empathogenic effects.",
+        "effects": "Altered perception of time, enhanced tactile sensations, visual distortions, euphoria.",
+        "dosage": "Oral dosage: Light: 5-15 mg, Common: 15-25 mg, Strong: 25-50 mg",
+        "usage": "Often ingested orally. It can also be insufflated, but this is less common due to the associated pain and increased risk.",
+        "duration": "4-6 hours",
+        "risks": "Potential for psychological dependence, increased heart rate, nausea.",
+        "sideEffects": "Nausea, headache, muscle tension, and insomnia.",
+        "sexUse": "Some users report enhanced tactile sensations, but individual responses may vary.",
+        "mixedUse": "It is strongly advised not to mix with alcohol or other substances to reduce the risk of adverse effects.",
+        "otherInformation": "It is illegal in many countries and its possession, manufacture, or distribution may be punished by law."
+      }
+    },
+    {
+      "name": "3-CMC",
+      "aliases": ["Clophedrone"],
+      "appearance": "White or off-white crystalline powder",
+      "details": {
+        "description": "A research chemical with stimulant properties, belonging to the cathinone class.",
+        "effects": "Stimulation, euphoria, increased focus, and motivation.",
+        "dosage": "Not well documented due to its status as a research chemical. Use is not advised.",
+        "usage": "Can be ingested orally or insufflated, but again, use is not advised due to the lack of safety data.",
+        "duration": "Varies, but typically several hours.",
+        "risks": "Potential for addiction, neurotoxicity, and other adverse effects. Lack of safety data makes its use particularly risky.",
+        "sideEffects": "Potential side effects include increased heart rate, hypertension, and anxiety.",
+        "sexUse": "Not documented.",
+        "mixedUse": "Due to the lack of safety data, mixing with other substances could potentially be very dangerous.",
+        "otherInformation": "As a research chemical, it is not intended for human consumption, and its sale may be restricted in many jurisdictions."
+      }
+    },
+    {
+        "name": "3-MMC",
+        "aliases": ["3-methylmethcathinone"],
+        "appearance": "White crystalline powder",
+        "details": {
+          "description": "A synthetic stimulant from the substituted cathinone family, which is structurally similar to mephedrone.",
+          "effects": "Euphoria, increased energy and focus, empathy.",
+          "dosage": "Not well-documented; use is generally not advised due to lack of safety data.",
+          "usage": "Can be ingested orally or insufflated; usage is not recommended due to lack of safety data.",
+          "duration": "4-6 hours.",
+          "risks": "Potential for addiction, unknown long-term effects due to lack of research.",
+          "sideEffects": "Increased heart rate, hypertension, anxiety, paranoia.",
+          "sexUse": "Not documented.",
+          "mixedUse": "Use with other substances is not advised due to potential for unknown adverse effects.",
+          "otherInformation": "Considered a research chemical and not intended for human consumption. Legal status varies by country."
+        }
+      },
+      {
+        "name": "4-FA",
+        "aliases": ["Flux", "Fifa", "PAL-303"],
+        "appearance": "White or slightly yellowish powder, often found in tablet or capsule form",
+        "details": {
+          "description": "A synthetic stimulant drug that has both stimulant and entactogenic effects.",
+          "effects": "Euphoria, increased energy, empathy, increased sociability.",
+          "dosage": "Dosages vary, typically ranging from 50-200mg, but it is not medically sanctioned for human consumption and using it can be extremely dangerous.",
+          "usage": "Orally in capsule or tablet form, sometimes snorted.",
+          "duration": "4-8 hours, depending on the dosage and individual metabolism.",
+          "risks": "Neurotoxicity, cardiovascular issues, addiction, and potential legal consequences.",
+          "sideEffects": "Insomnia, anxiety, headaches, and potential severe health issues.",
+          "sexUse": "Not documented.",
+          "mixedUse": "Combining it with other substances can significantly increase the risk of adverse effects.",
+          "otherInformation": "Currently a substance of concern due to its potential for misuse and unknown long-term effects."
+        }
+      },
+      {
+        "name": "4-MMC",
+        "aliases": ["Mephedrone", "Mephi", "Drone"],
+        "appearance": "White or slightly yellowish crystalline powder, often found in capsule or tablet form",
+        "details": {
+          "description": "A synthetic stimulant drug, part of the substituted cathinone class, similar in structure to amphetamines.",
+          "effects": "Euphoria, increased energy, increased sociability, and empathy.",
+          "dosage": "Doses range from 50-200mg, although it is not medically sanctioned for human consumption and can be extremely dangerous.",
+          "usage": "Orally, snorted or injected.",
+          "duration": "2-4 hours depending on the method of administration.",
+          "risks": "Addiction, potential neurotoxicity, cardiovascular issues, and potential legal consequences.",
+          "sideEffects": "Anxiety, paranoia, hallucinations, and potential severe health issues.",
+          "sexUse": "Not documented.",
+          "mixedUse": "Combining it with other substances can significantly increase the risk of adverse effects.",
+          "otherInformation": "Classified as a controlled substance in many countries due to its high potential for misuse."
+        }
+      },
+      {
+        "name": "5-MeO-DALT",
+        "aliases": ["Foxy Methoxy"],
+        "appearance": "White or off-white crystalline powder",
+        "details": {
+          "description": "A synthetic psychedelic drug from the tryptamine family, similar to DMT.",
+          "effects": "Visual and auditory hallucinations, altered perception of time and space.",
+          "dosage": "Not well-documented; use is generally not advised due to lack of safety data.",
+          "usage": "Can be ingested orally or insufflated; usage is not recommended due to lack of safety data.",
+          "duration": "4-6 hours.",
+          "risks": "Potential for dangerous interactions with other drugs or medications, potential legal issues.",
+          "sideEffects": "Nausea, vomiting, increased heart rate, increased blood pressure.",
+          "sexUse": "Not typically associated with sexual use; can significantly alter perception and judgment.",
+          "mixedUse": "Using with other substances can increase the risk of adverse effects.",
+          "otherInformation": "Controlled substance in many jurisdictions; traditionally used in some indigenous religious ceremonies."
+        }
+      },
+      {
+        "name": "5-MeO-MiPT",
+        "aliases": ["Moxy"],
+        "appearance": "White or off-white crystalline powder",
+        "details": {
+          "description": "A synthetic psychedelic drug from the tryptamine family, similar to DMT.",
+          "effects": "Visual and auditory hallucinations, altered perception of time and space.",
+          "dosage": "Not well-documented; use is generally not advised due to lack of safety data.",
+          "usage": "Can be ingested orally or insufflated; usage is not recommended due to lack of safety data.",
+          "duration": "4-6 hours.",
+          "risks": "Potential for dangerous interactions with other drugs or medications, potential legal issues.",
+          "sideEffects": "Nausea, vomiting, increased heart rate, increased blood pressure.",
+          "sexUse": "Not typically associated with sexual use; can significantly alter perception and judgment.",
+          "mixedUse": "Using with other substances can increase the risk of adverse effects.",
+          "otherInformation": "Controlled substance in many jurisdictions; traditionally used in some indigenous religious ceremonies."
+        }
+      },
+      {
+        "name": "6-APB",
+        "   aliases": ["Benzofury"],
+        "appearance": "White or off-white crystalline powder",
+        "details": {
+          "description": "A synthetic drug with stimulant and entactogenic effects, similar to MDMA.",
+          "effects": "Euphoria, increased energy, empathy, increased sociability.",
+          "dosage": "Not well-documented; use is generally not advised due to lack of safety data.",
+          "usage": "Can be ingested orally or insufflated; usage is not recommended due to lack of safety data.",
+          "duration": "4-6 hours.",
+          "risks": "Potential for dangerous interactions with other drugs or medications, potential legal issues.",
+          "sideEffects": "Nausea, vomiting, increased heart rate, increased blood pressure.",
+          "sexUse": "Not typically associated with sexual use; can significantly alter perception and judgment.",
+          "mixedUse": "Using with other substances can increase the risk of adverse effects.",
+          "otherInformation": "Controlled substance in many jurisdictions; traditionally used in some indigenous religious ceremonies."
+        }
+        },
+        {
+          "name": "Acetaminophen",
+          "aliases": ["Tylenol", "Paracetamol"],
+          "appearance": "White crystalline powder, often found in tablet or capsule form",
+          "details": {
+            "description": "A pain reliever and fever reducer, commonly found in over-the-counter medications.",
+            "effects": "Pain relief, fever reduction.",
+            "dosage": "Dosages vary depending on the specific formulation and indication.",
+            "usage": "Orally, as a tablet or capsule.",
+            "duration": "4-6 hours.",
+            "risks": "Liver damage, potential legal issues.",
+            "sideEffects": "Nausea, vomiting, constipation, and others.",
+            "sexUse": "Not typically associated with sexual use.",
+            "mixedUse": "Combining with other substances can increase the risk of adverse effects.",
+            "otherInformation": "Widely available over-the-counter."
+          }
+        },
+        {
+          "name": "Alcohol",
+          "aliases": ["Alk"],
+          "appearance": "Liquid, can be clear or colored depending on the type (e.g., beer, wine, spirits).",
+          "details": {
+            "description": "A psychoactive substance that is found in beverages such as beer, wine, and spirits.",
+            "effects": "Lowered inhibitions, relaxation, euphoria at moderate doses, depression of the central nervous system.",
+            "dosage": "Varies widely based on the type of beverage and individual tolerance. Standard drink contains about 14 grams of pure alcohol.",
+            "usage": "Orally.",
+            "duration": "Effects can last several hours, depending on the amount consumed and individual factors.",
+            "risks": "Addiction, liver damage, heart problems, potential legal consequences (e.g., DUI).",
+            "sideEffects": "Hangover, which may include headache, nausea, vomiting, and diarrhea. Potential for alcohol poisoning with high doses.",
+            "sexUse": "Can sometimes increase desire but decrease performance.",
+            "mixedUse": "Can be extremely dangerous when mixed with other drugs, especially depressants.",
+            "otherInformation": "Widely legal but regulated; minimum age requirements exist in many jurisdictions."
+          }
+        },
+        {
+            "name": "Alprazolam (Xanax®)",
+            "aliases": ["Xanny", "Zannies", "Xan's"],
+            "appearance": "Small white tablets, sometimes with scores or imprints.",
+            "details": {
+              "description": "A benzodiazepine used to treat anxiety and panic disorders.",
+              "effects": "Sedation, relaxation, and reduction of anxiety.",
+              "dosage": "Prescribed dosages vary; misuse can lead to serious health complications.",
+              "usage": "Orally, as a tablet.",
+              "duration": "Effects last approximately 5-11 hours, depending on the specific formulation.",
+              "risks": "Addiction, respiratory depression, impaired coordination, potential legal issues.",
+              "sideEffects": "Drowsiness, dizziness, increased saliva production, change in sex drive, and others.",
+              "sexUse": "Can cause decreased libido and sexual dysfunction.",
+              "mixedUse": "Increased risk of adverse effects when combined with other substances, particularly other depressants or alcohol.",
+              "otherInformation": "Schedule IV controlled substance in the US."
+            }
+          }, 
+          {
+            "name": "Amphetamine - Speed",
+            "aliases": ["Amphe", "Pep", "Speed"],
+            "appearance": "White or off-white powder, sometimes found in tablet or capsule form",
+            "details": {
+              "description": "A powerful central nervous system stimulant that is used recreationally for its euphoric and energizing effects.",
+              "effects": "Increased energy, euphoria, increased focus and alertness.",
+              "dosage": "Varies depending on the purity and individual physiology, among other factors.",
+              "usage": "Can be ingested orally, snorted, or injected.",
+              "duration": "Effects can last several hours, depending on the method of administration.",
+              "risks": "Addiction, heart problems, psychological issues such as anxiety and paranoia.",
+              "sideEffects": "Insomnia, dry mouth, increased heart rate and blood pressure.",
+              "sexUse": "Can increase libido, but chronic use can lead to sexual dysfunction.",
+              "mixedUse": "Mixing with other substances can greatly increase the risks of adverse effects.",
+              "otherInformation": "Recreational use is illegal in many jurisdictions, and misuse can lead to serious health problems."
+            }
+          },
+      {
+        "name": "Anabolic Androgen Steroids (AAS)",
+        "aliases": ["Stackers", "Gym Candy", "Gear Diana"],
+        "appearance": "Pills, capsules, or injectable liquids.",
+        "details": {
+          "description": "Synthetic drugs that mimic the effects of testosterone in the body.",
+          "effects": "Increased muscle mass and strength, potential for increased aggressiveness.",
+          "dosage": "Varies widely, and usage outside of medical supervision is not recommended.",
+          "usage": "Orally or through injection.",
+          "duration": "Varies based on the specific substance and method of administration.",
+          "risks": "Potential for severe health issues, including heart disease, liver damage, and increased risk of certain cancers.",
+          "sideEffects": "Potential for severe side effects, including hormonal imbalances, mood swings, and physical changes.",
+          "sexUse": "Can cause sexual dysfunction and other sex-related side effects.",
+          "mixedUse": "Using with other substances can increase the risk of adverse effects.",
+          "otherInformation": "Controlled substances in many jurisdictions due to their high potential for misuse and harm."
+        }
+      },
+      {
+        "name": "Buprenorphine (Subutex®)",
+        "aliases": ["Subs", "Big Whites", "Strips"],
+        "appearance": "White tablets or sublingual films.",
+        "details": {
+          "description": "A partial opioid agonist used in the treatment of opioid addiction.",
+          "effects": "Pain relief, sedation, euphoria when misused.",
+          "dosage": "Varies depending on the medical prescription, misuse can lead to serious health complications.",
+          "usage": "Sublingually or, in misuse cases, through other routes such as injection.",
+          "duration": "Effects can last approximately 24-60 hours.",
+          "risks": "Addiction, respiratory depression, potential legal issues if misused.",
+          "sideEffects": "Constipation, nausea, muscle aches, and potential dependency.",
+          "sexUse": "May cause decreased libido.",
+          "mixedUse": "Increased risk of adverse effects when combined with other substances, especially central nervous system depressants.",
+          "otherInformation": "It is a controlled substance and should only be used under medical supervision."
+        }
+      },
+      {
+        "name": "Caffeine",
+        "aliases": [],
+        "appearance": "White crystalline powder, also found in various beverages like coffee, tea, and energy drinks.",
+        "details": {
+            "description": "A central nervous system stimulant that is the most widely consumed psychoactive substance in the world.",
+            "effects": "Increased alertness, reduced fatigue, improved concentration.",
+            "dosage": "Typically up to 400 milligrams per day for most adults, which is roughly the amount in four cups of brewed coffee.",
+            "usage": "Orally, through beverages, pills, or food products containing caffeine.",
+            "duration": "Effects can last up to 6 hours, depending on individual sensitivity.",
+            "risks": "Overconsumption can lead to restlessness, insomnia, headaches, dizziness, fast heartbeat, or other symptoms.",
+            "sideEffects": "Might cause digestive issues, addiction, and may disrupt sleep patterns.",
+            "sexUse": "No significant effects on sexual performance.",
+            "mixedUse": "Combining with other stimulants can increase the risk of adverse effects.",
+            "otherInformation": "Caffeine is a natural stimulant belonging to a class of drugs called xanthines."
+        }
+    },
+    {
+        "name": "Cocaine",
+        "aliases": ["Coke", "Powder", "Snow"],
+        "appearance": "White powder or crystalline rocks in its crack form.",
+        "details": {
+            "description": "A powerful stimulant made from the leaves of the coca plant native to South America.",
+            "effects": "Increased energy, euphoria, increased heart rate, and elevated mood.",
+            "dosage": "Recreational use is illegal and extremely dangerous, therefore a safe dosage is not applicable.",
+            "usage": "Snorting, smoking (as crack cocaine), or injecting.",
+            "duration": "Effects last between 15 to 30 minutes when snorted and even shorter durations when smoked or injected.",
+            "risks": "High risk of addiction, overdose, cardiac arrest, respiratory failure, and other serious health issues.",
+            "sideEffects": "Anxiety, paranoia, restlessness, and irritability.",
+            "sexUse": "Can increase libido initially but may lead to sexual dysfunction with prolonged use.",
+            "mixedUse": "Extremely dangerous to combine with other substances, especially depressants like alcohol.",
+            "otherInformation": "Its use is associated with significant legal and health risks, including addiction and severe health problems."
+        }
+    },    
+      {
+        "name": "Cannabis",
+        "aliases": ["Grass", "Weed", "Ganja"],
+        "appearance": "Greenish-brown dried leaves and flowers of the Cannabis sativa plant.",
+        "details": {
+          "description": "A psychoactive substance derived from the Cannabis sativa plant, known for both recreational and medicinal uses.",
+          "effects": "Relaxation, euphoria, increased appetite, altered perception of time.",
+          "dosage": "Varies widely based on the route of administration and individual tolerance.",
+          "usage": "Smoked, vaporized, or ingested orally (as in edibles).",
+          "duration": "Effects last approximately 2-6 hours, depending on the route of administration.",
+          "risks": "Impaired coordination, risk of addiction, potential legal issues depending on jurisdiction.",
+          "sideEffects": "Dry mouth, red eyes, potential for increased anxiety or paranoia.",
+          "sexUse": "Can affect sexual function in various ways, sometimes enhancing pleasure but potentially causing dysfunction.",
+          "mixedUse": "Combining with other substances can increase the risk of adverse effects.",
+          "otherInformation": "Legal status varies by region, with some areas allowing medicinal or recreational use."
+        }
+      },
+      {
+        "name": "Cathinone",
+        "aliases": ["Khat", "Qat", "Quaadka"],
+        "appearance": "Greenish-brown dried leaves and flowers of the Cannabis sativa plant.",
+        "details": {
+          "description": "A psychoactive substance derived from the Cannabis sativa plant, known for both recreational and medicinal uses.",
+          "effects": "Relaxation, euphoria, increased appetite, altered perception of time.",
+          "dosage": "Varies widely based on the route of administration and individual tolerance.",
+          "usage": "Smoked, vaporized, or ingested orally (as in edibles).",
+          "duration": "Effects last approximately 2-6 hours, depending on the route of administration.",
+          "risks": "Impaired coordination, risk of addiction, potential legal issues depending on jurisdiction.",
+          "sideEffects": "Dry mouth, red eyes, potential for increased anxiety or paranoia.",
+          "sexUse": "Can affect sexual function in various ways, sometimes enhancing pleasure but potentially causing dysfunction.",
+          "mixedUse": "Combining with other substances can increase the risk of adverse effects.",
+          "otherInformation": "Legal status varies by region, with some areas allowing medicinal or recreational use."
+        }
+      },
+      {
+        "name": "Codeine",
+        "aliases": ["Dirty Sprite", "Lean", "Sizzurp"],
+        "appearance": "White crystalline powder, also available in various pharmaceutical preparations such as tablets and syrups.",
+        "details": {
+            "description": "An opiate used to treat mild to moderate pain and to relieve cough.",
+            "effects": "Pain relief, euphoria, relaxation.",
+            "dosage": "Typically prescribed in doses ranging from 15mg to 60mg.",
+            "usage": "Orally, as prescribed by a healthcare provider. Recreational misuse involves higher doses or mixing with other substances.",
+            "duration": "Effects can last approximately 4-6 hours.",
+            "risks": "Addiction, respiratory depression, constipation.",
+            "sideEffects": "Drowsiness, dizziness, nausea, vomiting.",
+            "sexUse": "Can cause decreased libido and sexual dysfunction.",
+            "mixedUse": "Increased risk of adverse effects, especially when mixed with alcohol or other CNS depressants.",
+            "otherInformation": "A controlled substance with a high potential for addiction and misuse."
+        }
+    },
+    {
+        "name": "DMT and 5-MeO-DMT",
+        "aliases": ["Changa", "Ayahuasca"],
+        "appearance": "White crystalline powder, sometimes found in plant materials. Ayahuasca is a brew made with plants containing DMT.",
+        "details": {
+            "description": "A powerful psychedelic drug found in certain plants and animals.",
+            "effects": "Intense hallucinations, altered perception of time and space, spiritual experiences.",
+            "dosage": "Varies, usually smoked in doses ranging from 5-60 mg (DMT).",
+            "usage": "Smoked, vaporized, or used orally (as in the case of Ayahuasca).",
+            "duration": "Rapid onset with a duration of 5-30 minutes when smoked. Ayahuasca can last several hours.",
+            "risks": "Potential for psychological distress, bad trips, and dangerous behavior due to impaired judgment.",
+            "sideEffects": "Nausea, vomiting (especially with Ayahuasca), increased heart rate.",
+            "sexUse": "Not typically associated with sexual use.",
+            "mixedUse": "Combining with other substances can significantly increase risks.",
+            "otherInformation": "Use often involves complex preparation and is sometimes used in religious or spiritual contexts."
+        }
+    },
+    {
+        "name": "DOM - DOI - DOB",
+        "aliases": [],
+        "appearance": "Usually available in tablet or blotter form.",
+        "details": {
+            "description": "Psychedelic amphetamines that induce hallucinogenic effects.",
+            "effects": "Altered perception, hallucinations, increased energy and euphoria.",
+            "dosage": "Varies, but generally in the range of 2-7mg for DOM. Similar ranges apply for DOI and DOB.",
+            "usage": "Orally, usually ingested in tablet form or as a blotter paper.",
+            "duration": "Long-lasting effects, generally lasting 12-20 hours.",
+            "risks": "Increased heart rate, hypertension, potential for psychological distress, and bad trips.",
+            "sideEffects": "Nausea, vomiting, anxiety, agitation.",
+            "sexUse": "Not typically associated with sexual use.",
+            "mixedUse": "Increased risk of adverse reactions and unpredictable effects when mixed with other substances.",
+            "otherInformation": "Part of a class of drugs known as psychedelic amphetamines."
+        }
+    },
+    {
+        "name": "Dexamphetamine and Adderall",
+        "aliases": [],
+        "appearance": "Tablets or capsules, often prescribed in pharmaceutical formulations.",
+        "details": {
+            "description": "Stimulant medications used primarily to treat ADHD and narcolepsy.",
+            "effects": "Increased focus, energy, and alertness.",
+            "dosage": "Prescribed dosage can vary, generally starting from 5mg.",
+            "usage": "Orally, as prescribed by a healthcare provider.",
+            "duration": "Effects can last 4-6 hours, extended-release formulas can last up to 12 hours.",
+            "risks": "Potential for addiction, increased heart rate, hypertension.",
+            "sideEffects": "Insomnia, dry mouth, decreased appetite, anxiety.",
+            "sexUse": "Can cause changes in libido or sexual performance.",
+            "mixedUse": "Increased risk of adverse effects, especially when mixed with alcohol or other stimulants.",
+            "otherInformation": "A controlled substance with potential for misuse and addiction."
+        }
+    },
+    {
+        "name": "Dextromethorphan or Bexin®",
+        "aliases": ["DXM"],
+        "appearance": "Syrup, tablet, or gel capsule form.",
+        "details": {
+            "description": "An active ingredient in many over-the-counter cough suppressants.",
+            "effects": "At higher doses, it can cause euphoria, hallucinations, and dissociation.",
+            "dosage": "Medically, it is used in doses of 15-30mg. Recreational usage involves much higher doses, which can be dangerous.",
+            "usage": "Orally, often ingested as syrup or in tablet form.",
+            "duration": "Effects can last between 6-8 hours depending on the dosage.",
+            "risks": "Potential for overdose, especially when mixed with other substances. Can cause liver damage in high doses.",
+            "sideEffects": "Nausea, dizziness, vomiting, increased heart rate.",
+            "sexUse": "Not typically associated with sexual use.",
+            "mixedUse": "Dangerous when mixed with other substances due to increased risk of overdose and adverse effects.",
+            "otherInformation": "Use outside of medical advice is strongly discouraged due to high risk of adverse effects."
+        }
+    },
+    {
+        "name": "Diacetylmorphine (Diaphin®)",
+        "aliases": ["Slides"],
+        "appearance": "White or brown powder, or as a black, sticky substance known as 'black tar heroin'.",
+        "details": {
+            "description": "A potent opioid derived from morphine, commonly known as heroin.",
+            "effects": "Intense euphoria, pain relief, sedation.",
+            "dosage": "Dosage varies widely, with a high risk of overdose due to the potency of the drug.",
+            "usage": "Can be injected, snorted, or smoked.",
+            "duration": "Effects can last several hours, but this varies depending on the route of administration.",
+            "risks": "High risk of addiction and overdose, which can be fatal. Potential for severe respiratory depression.",
+            "sideEffects": "Nausea, constipation, confusion, drowsiness.",
+            "sexUse": "Can decrease libido and impair sexual performance.",
+            "mixedUse": "Very high risk of adverse effects, including fatal overdose, especially when mixed with other depressants.",
+            "otherInformation": "Strongly associated with addiction, crime, and other negative social outcomes."
+        }
+    },
+    {
+        "name": "Diazepam (Valium®)",
+        "aliases": ["Vallies", "Yellow Pill", "Valibum"],
+        "appearance": "Usually found as a pill, sometimes in liquid form.",
+        "details": {
+            "description": "A medication of the benzodiazepine family that typically produces a calming effect.",
+            "effects": "Relief of anxiety, muscle spasms, and seizures. Can induce sleepiness.",
+            "dosage": "Medically prescribed doses vary; recreational use is not advised due to high potential for addiction and overdose.",
+            "usage": "Orally, sometimes injected.",
+            "duration": "Effects can last for several hours, with peak effects occurring within 1-1.5 hours of ingestion.",
+            "risks": "Addiction, respiratory depression, increased risk of accidents (due to impaired coordination).",
+            "sideEffects": "Drowsiness, dizziness, tiredness, blurred vision, and in some cases, paradoxical increased anxiety or agitation.",
+            "sexUse": "Can impair sexual performance and decrease libido.",
+            "mixedUse": "High risk when mixed with other depressants; can lead to severe respiratory depression and death.",
+            "otherInformation": "Withdrawal can be dangerous and should be medically supervised."
+        }
+    },
+    {
+        "name": "Ephedrine",
+        "appearance": "White crystalline powder or tablet.",
+        "details": {
+            "description": "A medication and stimulant used to prevent low blood pressure during spinal anesthesia. It is also commonly used as a weight loss supplement.",
+            "effects": "Increased heart rate, elevated blood pressure, and bronchial relaxation.",
+            "dosage": "Medical dosage varies; it is not recommended for recreational use.",
+            "usage": "Orally or by injection.",
+            "duration": "Effects can last between 3-6 hours.",
+            "risks": "Cardiovascular issues, potential for addiction, and neurotoxicity.",
+            "sideEffects": "Nervousness, insomnia, vertigo, headache, tachycardia, and palpitations.",
+            "sexUse": "Not typically associated with sexual use.",
+            "mixedUse": "Increased risk of adverse effects when mixed with other stimulants or depressants.",
+            "otherInformation": "It has been implicated in several instances of stroke, cardiac arrest, and death when used recreationally or as a weight loss supplement."
+        }
+    },
+    {
+        "name": "Etizolam",
+        "appearance": "White powder or in tablet form.",
+        "details": {
+            "description": "A benzodiazepine analog with sedative, anxiolytic, and muscle relaxant properties, often used to treat anxiety and insomnia.",
+            "effects": "Relaxation, drowsiness, reduced anxiety.",
+            "dosage": "Typical medical dosage ranges from 0.25 to 2mg. Recreational use is not recommended.",
+            "usage": "Orally, sublingually.",
+            "duration": "Effects last for about 6 to 8 hours.",
+            "risks": "Dependence, withdrawal syndrome, respiratory depression.",
+            "sideEffects": "Drowsiness, muscle weakness, fainting.",
+            "sexUse": "Can cause decreased libido and erectile dysfunction.",
+            "mixedUse": "Can be very dangerous when mixed with other depressants like alcohol.",
+            "otherInformation": "It is considered to be relatively safe when used medically, but recreational use increases the risk of adverse effects."
+        }
+    },
+    {
+        "name": "Fentanyl",
+        "aliases": ["Drop Dead", "China White", "Synthetic Heroin"],
+        "appearance": "White powder, also found in patch and injectable forms.",
+        "details": {
+            "description": "A synthetic opioid that is 80-100 times stronger than morphine. Used medically for pain management.",
+            "effects": "Intense euphoria, pain relief.",
+            "dosage": "Dosages vary significantly, but recreational use is extremely dangerous given the drug's potency.",
+            "usage": "Injection, transdermal patch, or orally.",
+            "duration": "Effects last about 1 to 2 hours.",
+            "risks": "High risk of overdose and death, addiction, respiratory depression.",
+            "sideEffects": "Nausea, vomiting, constipation, sedation.",
+            "sexUse": "Can decrease libido and cause erectile dysfunction.",
+            "mixedUse": "Extremely dangerous when mixed with other substances, especially depressants.",
+            "otherInformation": "Fentanyl is a key driver of the opioid epidemic due to its high potency and narrow therapeutic index."
+        }
+    },
+    {
+        "name": "Flualprazolam",
+        "aliases": ["Flualp"],
+        "appearance": "White crystalline powder, also available in pellet form.",
+        "details": {
+            "description": "A synthetic depressant substance of the benzodiazepine chemical class which produces anxiolytic, disinhibiting, sedative, muscle relaxant, and memory suppressing effects.",
+            "effects": "Relaxation, sedation, reduction in anxiety.",
+            "dosage": "Typically ranges from 0.25 to 1mg; however, recreational use is not recommended.",
+            "usage": "Orally, sometimes insufflated.",
+            "duration": "Effects last approximately 5-8 hours.",
+            "risks": "Addiction, respiratory depression, amnesia.",
+            "sideEffects": "Drowsiness, impaired coordination, vertigo.",
+            "sexUse": "Can reduce libido and impair sexual performance.",
+            "mixedUse": "Very dangerous when mixed with other depressants, can lead to fatal overdose.",
+            "otherInformation": "It is a relatively new substance and its safety profile is not well-established."
+        }
+    },
+    {
+        "name": "Flunitrazepam",
+        "aliases": ["Rohypnol", "Forget Me Pill", "Roofies", "Mexican Valium"],
+        "appearance": "White tablet form, sometimes available as a soluble pill.",
+        "details": {
+            "description": "A potent benzodiazepine, known for its use as a sedative and amnestic properties. It is infamous for its misuse as a date-rape drug.",
+            "effects": "Sedation, muscle relaxation, and memory loss.",
+            "dosage": "Medical dosage varies, but it's not commonly prescribed due to high abuse potential. Recreational use is strongly discouraged.",
+            "usage": "Orally, sometimes mixed with alcohol or other substances.",
+            "duration": "Effects last 5-8 hours, sometimes longer due to its active metabolites.",
+            "risks": "High risk of overdose, particularly when mixed with alcohol. Can cause amnesia and has been used in sexual assaults.",
+            "sideEffects": "Dizziness, loss of motor control, impaired judgement.",
+            "sexUse": "Infamous for misuse as a date rape drug; usage in a sexual context without consent is a serious crime.",
+            "mixedUse": "Dangerous when mixed with other depressants, risk of fatal overdose.",
+            "otherInformation": "It is controlled under Schedule IV of the Controlled Substances Act in the US."
+        }
+    },
+    {
+        "name": "GHB - GBL - BDO",
+        "aliases": ["Liquid ecstasy", "G", "KO Drop"],
+        "appearance": "Liquid form, sometimes found in powder or capsule form.",
+        "details": {
+            "description": "A class of drugs that are used for their euphoric and sedative effects. They are known for their high potential for abuse and dependence.",
+            "effects": "Euphoria, relaxation, enhanced sexuality, and transient memory loss.",
+            "dosage": "Dosage varies greatly between individuals, with a therapeutic dose ranging from 1 to 2.5 grams, but recreational use is not recommended due to high risk of overdose.",
+            "usage": "Orally, typically in liquid form.",
+            "duration": "Effects last for 1 to 2 hours, with after-effects lasting up to 4 hours.",
+            "risks": "High risk of overdose, which can result in coma or death. Also has a high potential for addiction.",
+            "sideEffects": "Nausea, vomiting, dizziness, and respiratory depression.",
+            "sexUse": "Has been used as a date-rape drug due to its ability to induce amnesia and impair a person's ability to resist.",
+            "mixedUse": "Highly dangerous when combined with alcohol or other CNS depressants.",
+            "otherInformation": "Controlled in many countries due to its high abuse potential and risk of overdose."
+        }
+    },
+    {
+        "name": "Heroin",
+        "aliases": ["Brown sugar", "Sugar", "H"],
+        "appearance": "White or brown powder, or black sticky substance known as 'black tar heroin'.",
+        "details": {
+            "description": "An opioid drug made from morphine, a natural substance taken from the seed pod of various opium poppy plants.",
+            "effects": "Euphoria, drowsiness, and reduced sensation of pain.",
+            "dosage": "Dosages can vary, but recreational use is highly discouraged due to the high risk of overdose and addiction.",
+            "usage": "Injection, snorting, or smoking.",
+            "duration": "Effects can last several hours, depending on the route of administration.",
+            "risks": "Very high risk of overdose and addiction. Long-term use can lead to physical dependence and severe health problems.",
+            "sideEffects": "Nausea, constipation, confusion, and respiratory depression.",
+            "sexUse": "Can reduce libido and impair sexual performance.",
+            "mixedUse": "Combining with other substances, especially alcohol or benzodiazepines, can increase the risk of overdose.",
+            "otherInformation": "It is a Schedule I controlled substance in the US, meaning it has a high potential for abuse and no accepted medical use."
+        }
+    },
+    {
+        "name": "Ibogaine",
+        "aliases": ["Iboga"],
+        "appearance": "White powder, typically found in capsules or tablets.",
+        "details": {
+            "description": "A psychoactive substance found in plants of the Apocynaceae family, used traditionally in spiritual practices and ceremonies.",
+            "effects": "Alters the state of consciousness, induces visions and insights.",
+            "dosage": "Varies, but it is generally used in a ceremonial context, guided by experienced practitioners.",
+            "usage": "Orally, typically in capsule or tablet form.",
+            "duration": "Effects can last from 24 to 36 hours.",
+            "risks": "Can cause heart complications and potentially be life-threatening. Recreational use is discouraged.",
+            "sideEffects": "Nausea, vomiting, muscle coordination issues, and potential neurotoxicity.",
+            "sexUse": "Not applicable, as it is not used for sexual enhancement.",
+            "mixedUse": "Mixing with other substances increases the risk of adverse reactions.",
+            "otherInformation": "Currently being researched for its potential use in addiction treatment."
+        }
+    },
+    {
+        "name": "Ketamine",
+        "aliases": ["K", "Special K", "Keta"],
+        "appearance": "White crystalline powder, often found in vials for injection or in tablet form.",
+        "details": {
+            "description": "A dissociative anesthetic used in medical settings and also abused recreationally for its hallucinogenic and dissociative effects.",
+            "effects": "Altered perception, hallucinations, and a feeling of detachment from one's body.",
+            "dosage": "Medical dosages are strictly controlled, recreational dosages vary widely but are strongly discouraged.",
+            "usage": "Injection, snorting, or orally.",
+            "duration": "Effects last between 45 minutes to several hours, depending on the route of administration.",
+            "risks": "High potential for abuse and addiction. Can cause severe respiratory depression.",
+            "sideEffects": "Nausea, dizziness, increased heart rate, and potential bladder damage with long-term use.",
+            "sexUse": "Can impair sexual performance and reduce libido.",
+            "mixedUse": "Dangerous when combined with other CNS depressants like alcohol.",
+            "otherInformation": "It is controlled in many countries due to its potential for abuse, but is also used medically in certain situations."
+        }
+    },
+    {
+        "name": "Kratom",
+        "aliases": ["Herbal Speed", "Biak-Biak", "Mambog"],
+        "appearance": "Green powdered leaves, also available in capsules and extracts.",
+        "details": {
+            "description": "A tropical tree (Mitragyna speciosa) native to Southeast Asia, with leaves that contain compounds that can have psychotropic (mind-altering) effects.",
+            "effects": "Effects vary depending on the dose. It can act as a stimulant at low doses and a sedative at higher doses.",
+            "dosage": "Dosing can be variable and should be carefully controlled, starting at a low dose if used.",
+            "usage": "Orally, through powdered leaves in capsules, teas, or extracts.",
+            "duration": "Effects can last between 2-5 hours, depending on the dose and individual factors.",
+            "risks": "Potential for addiction and withdrawal symptoms. Also associated with side effects like weight loss, loss of appetite, and psychosis.",
+            "sideEffects": "Nausea, vomiting, constipation, and liver damage with prolonged use.",
+            "sexUse": "Not significantly associated with sexual use.",
+            "mixedUse": "Combining with other substances can increase risks and adverse effects.",
+            "otherInformation": "It is not controlled in the United States but is considered a drug of concern."
+        }
+    },
+    {
+        "name": "LSD",
+        "aliases": ["Acid"],
+        "appearance": "Colorless, odorless liquid, often placed on small tabs of paper or gelatin sheets.",
+        "details": {
+            "description": "A powerful hallucinogenic drug also known as acid.",
+            "effects": "Altered thoughts, feelings, and awareness of one's surroundings. Can cause hallucinations.",
+            "dosage": "Typically taken in micrograms (µg), with recreational doses often ranging from 50 to 200µg.",
+            "usage": "Orally, typically on small tabs of paper that are placed under the tongue.",
+            "duration": "Effects last between 6-12 hours, with peak effects occurring 2-5 hours after ingestion.",
+            "risks": "Potential for bad trips, flashbacks, and psychosis. It is illegal in most countries.",
+            "sideEffects": "Increased heart rate, sweating, dilated pupils, insomnia, and dry mouth.",
+            "sexUse": "Can alter perception of time and sensory experiences, possibly affecting sexual experiences in unpredictable ways.",
+            "mixedUse": "Can be dangerous when mixed with other substances, especially other psychedelics or stimulants.",
+            "otherInformation": "It has been used in medical research for its potential therapeutic effects in areas such as depression and anxiety."
+        }
+    },    
+    {
+        "name": "Laughing gas",
+        "aliases": [],
+        "appearance": "Compressed gas in metal cylinders, sometimes used in whipped cream dispensers.",
+        "details": {
+            "description": "Nitrous oxide, commonly known as laughing gas, is a colorless, sweet-smelling gas that is sometimes used recreationally for its euphoric and dissociative effects.",
+            "effects": "Euphoria, dizziness, and distortions in sensory perception.",
+            "dosage": "Recreational use typically involves inhaling nitrous oxide from a balloon or canister.",
+            "usage": "Inhaling the gas, often from a balloon or canister.",
+            "duration": "Effects last for a few minutes.",
+            "risks": "Potential for oxygen deprivation if used in an unsafe manner, which can lead to brain damage.",
+            "sideEffects": "Dizziness, nausea, headache, and potential harm from improper administration.",
+            "sexUse": "Not associated with sexual use.",
+            "mixedUse": "Mixing with other substances, especially depressants, can increase risks.",
+            "otherInformation": "Commonly used in medical and dental settings for anesthesia and pain management."
+        }
+    },
+    {
+        "name": "Lorazepam (Temesta®)",
+        "aliases": [],
+        "appearance": "Oral tablets or injection.",
+        "details": {
+            "description": "A medication of the benzodiazepine class used to treat anxiety disorders, trouble sleeping, and active seizures.",
+            "effects": "Sedation, reduced anxiety, muscle relaxation.",
+            "dosage": "Medical dosage is typically low and carefully controlled; recreational use is strongly discouraged.",
+            "usage": "Orally, in tablet form, or intravenously.",
+            "duration": "Effects last for several hours.",
+            "risks": "Potential for dependence, withdrawal symptoms, and respiratory depression when misused.",
+            "sideEffects": "Drowsiness, dizziness, weakness, and unsteadiness.",
+            "sexUse": "Can impair sexual performance.",
+            "mixedUse": "Dangerous when combined with other depressants like alcohol or opioids.",
+            "otherInformation": "Lorazepam is a prescription medication and should only be used under medical supervision."
+        }
+    },
+    {
+        "name": "MDA - MDEA - MBDB",
+        "aliases": [],
+        "appearance": "Usually found in tablet form, sometimes as a powder.",
+        "details": {
+            "description": "MDA (3,4-methylenedioxyamphetamine), MDEA (3,4-methylenedioxy-N-ethylamphetamine), and MBDB (N-methyl-1,3-benzodioxolylbutanamine) are empathogenic substances that are chemically related to MDMA (ecstasy).",
+            "effects": "Increased empathy, emotional closeness, and altered sensory perception.",
+            "dosage": "Dosages vary widely and can be risky, as the purity of street drugs is often uncertain.",
+            "usage": "Orally, in tablet form.",
+            "duration": "Effects can last 3-6 hours.",
+            "risks": "Potential for overheating, dehydration, serotonin syndrome, and other health risks.",
+            "sideEffects": "Nausea, confusion, anxiety, and muscle tension.",
+            "sexUse": "Some users report increased intimacy and emotional connection with others.",
+            "mixedUse": "Should not be mixed with other substances, especially other empathogens or antidepressants.",
+            "otherInformation": "These substances are often encountered in pill form on the illicit market, but their purity and safety are not guaranteed."
+        }
+    },
+    {
+        "name": "MDMA (Ecstasy)",
+        "aliases": ["Molly", "E", "XTC"],
+        "appearance": "Usually found in tablet form, sometimes as a powder.",
+        "details": {
+            "description": "A synthetic drug that alters mood and perception. It is chemically similar to stimulants and hallucinogens.",
+            "effects": "Increased energy, euphoria, and altered sensory perception.",
+            "dosage": "Dosages vary widely and can be risky, as the purity of street drugs is often uncertain.",
+            "usage": "Orally, in tablet form.",
+            "duration": "Effects can last 3-6 hours.",
+            "risks": "Potential for overheating, dehydration, serotonin syndrome, and other health risks.",
+            "sideEffects": "Nausea, confusion, anxiety, and muscle tension.",
+            "sexUse": "Some users report increased intimacy and emotional connection with others.",
+            "mixedUse": "Should not be mixed with other substances, especially other empathogens or antidepressants.",
+            "otherInformation": "MDMA is a controlled substance in most countries due to its high potential for abuse and addiction."
+        }
+    },
+    {
+        "name": "Mescaline",
+        "aliases": ["Peyote", "Buttons", "Cactus"],
+        "appearance": "White crystalline powder, sometimes found in capsule form.",
+        "details": {
+            "description": "A naturally occurring psychedelic substance found in several species of cactus.",
+            "effects": "Altered perception, hallucinations, and euphoria.",
+            "dosage": "Typical doses range from 200 to 500mg, but recreational use is not recommended.",
+            "usage": "Orally, typically in capsule form.",
+            "duration": "Effects last 10-12 hours.",
+            "risks": "Potential for bad trips, flashbacks, and psychosis. It is illegal in most countries.",
+            "sideEffects": "Increased heart rate, sweating, dilated pupils, insomnia, and dry mouth.",
+            "sexUse": "Can alter perception of time and sensory experiences, possibly affecting sexual experiences in unpredictable ways.",
+            "mixedUse": "Can be dangerous when mixed with other substances, especially other psychedelics or stimulants.",
+            "otherInformation": "It has been used in medical research for its potential therapeutic effects in areas such as depression and anxiety."
+        }
+    },
+    {
+        "name": "Methamphetamine",
+        "aliases": ["Crystal", "Ice", "Glass"],
+        "appearance": "White crystalline powder, sometimes found in capsule form.",
+        "details": {
+            "description": "A powerful stimulant that is chemically similar to amphetamine.",
+            "effects": "Increased energy, euphoria, and altered sensory perception.",
+            "dosage": "Dosages vary widely and can be risky, as the purity of street drugs is often uncertain.",
+            "usage": "Orally, in tablet form.",
+            "duration": "Effects can last 3-6 hours.",
+            "risks": "Potential for overheating, dehydration, serotonin syndrome, and other health risks.",
+            "sideEffects": "Nausea, confusion, anxiety, and muscle tension.",
+            "sexUse": "Some users report increased intimacy and emotional connection with others.",
+            "mixedUse": "Should not be mixed with other substances, especially other empathogens or antidepressants.",
+            "otherInformation": "MDMA is a controlled substance in most countries due to its high potential for abuse and addiction."
+        }
+    },
+    {
+        "name": "Methcathinone",
+        "aliases": ["CAT", "Ephedron", "Jeff"],
+        "appearance": "White powder or crystalline substance.",
+        "details": {
+            "description": "A synthetic stimulant that is chemically similar to methamphetamine. It is a Schedule I controlled substance in the United States.",
+            "effects": "Increased alertness, energy, and euphoria.",
+            "dosage": "Recreational use is illegal and extremely dangerous; safe dosages are not applicable.",
+            "usage": "Orally, snorted, or injected.",
+            "duration": "Effects can last 2-4 hours, depending on the route of administration.",
+            "risks": "High risk of addiction, severe physical and mental health consequences, overdose, and death.",
+            "sideEffects": "Anxiety, paranoia, increased heart rate, and sweating.",
+            "sexUse": "Can increase sexual desire and performance initially but may lead to sexual dysfunction with prolonged use.",
+            "mixedUse": "Dangerous when mixed with other substances, especially other stimulants.",
+            "otherInformation": "Methcathinone is classified as a Schedule I controlled substance in the United States due to its high potential for abuse."
+        }
+    },
+    {
+        "name": "Methoxetamine",
+        "aliases": ["MXE", "M-Ket", "Mexxy"],
+        "appearance": "White crystalline powder, sometimes found in capsule form.",
+        "details": {
+            "description": "A dissociative drug that is chemically similar to ketamine.",
+            "effects": "Altered perception, hallucinations, and a feeling of detachment from one's body.",
+            "dosage": "Typical doses range from 10 to 50mg, but recreational use is not recommended.",
+            "usage": "Orally, typically in capsule form.",
+            "duration": "Effects last 2-3 hours.",
+            "risks": "Potential for bad trips, flashbacks, and psychosis. It is illegal in most countries.",
+            "sideEffects": "Increased heart rate, sweating, dilated pupils, insomnia, and dry mouth.",
+            "sexUse": "Can alter perception of time and sensory experiences, possibly affecting sexual experiences in unpredictable ways.",
+            "mixedUse": "Can be dangerous when mixed with other substances, especially other psychedelics or stimulants.",
+            "otherInformation": "It has been used in medical research for its potential therapeutic effects in areas such as depression and anxiety."
+        }
+    },
+    {
+        "name": "Methylone",
+        "aliases": ["Explosion", "Ease", "M1"],
+        "appearance": "Usually found in the form of white or off-white crystalline powder or as tablets.",
+        "details": {
+            "description": "A synthetic empathogen and stimulant that is chemically related to MDMA (ecstasy). It is often marketed as a safer alternative to MDMA, but its safety profile is not well understood.",
+            "effects": "Increased empathy, emotional closeness, and alertness.",
+            "dosage": "Dosages vary widely and can be risky, as the purity of street drugs is often uncertain.",
+            "usage": "Orally, in tablet form or as a powder.",
+            "duration": "Effects can last 3-6 hours.",
+            "risks": "Potential for overheating, dehydration, serotonin syndrome, and other health risks.",
+            "sideEffects": "Nausea, confusion, anxiety, and muscle tension.",
+            "sexUse": "Some users report increased intimacy and emotional connection with others.",
+            "mixedUse": "Should not be mixed with other substances, especially other empathogens or antidepressants.",
+            "otherInformation": "Methylone is often marketed as a research chemical or designer drug, and its safety is not well-established."
+        }
+    },
+    {
+        "name": "Methylphenidate (Ritalin®)",
+        "aliases": ["Vitamin R", "Kibbles and Bits", "The Smart Drug"],
+        "appearance": "Oral tablets or capsules.",
+        "details": {
+            "description": "A central nervous system stimulant used in the treatment of attention deficit hyperactivity disorder (ADHD) and narcolepsy.",
+            "effects": "Increased focus, attention, and wakefulness.",
+            "dosage": "Medical dosages are carefully controlled and prescribed based on individual needs.",
+            "usage": "Orally, in tablet or capsule form.",
+            "duration": "Effects typically last 3-6 hours, depending on the formulation.",
+            "risks": "Potential for misuse, addiction, and side effects such as increased heart rate and blood pressure.",
+            "sideEffects": "Nervousness, restlessness, and difficulty sleeping.",
+            "sexUse": "Not associated with sexual use.",
+            "mixedUse": "Combining with other substances can increase risks.",
+            "otherInformation": "Methylphenidate is a prescription medication and should only be used as directed by a healthcare professional."
+        }
+    },
+    {
+        "name": "Midazolam (Dormicum®)",
+        "aliases": ["Blue", "Dormis", "Sleeping Pills"],
+        "appearance": "Oral tablets, injectable solution, or as a nasal spray.",
+        "details": {
+            "description": "A medication of the benzodiazepine class used for its sedative, hypnotic, and anxiolytic (anxiety-reducing) effects.",
+            "effects": "Sedation, relaxation, and reduced anxiety.",
+            "dosage": "Medical dosage is carefully controlled; recreational use is strongly discouraged.",
+            "usage": "Orally, intravenously, or as a nasal spray.",
+            "duration": "Effects typically last for a few hours.",
+            "risks": "Potential for dependence, withdrawal symptoms, and respiratory depression when misused.",
+            "sideEffects": "Drowsiness, dizziness, and impaired coordination.",
+            "sexUse": "Can impair sexual performance.",
+            "mixedUse": "Dangerous when combined with other depressants like alcohol or opioids.",
+            "otherInformation": "Midazolam is a prescription medication and should only be used under medical supervision."
+        }
+    },
+    {
+        "name": "Modafinil",
+        "aliases": [],
+        "appearance": "Oral tablets or capsules.",
+        "details": {
+            "description": "A medication used to treat sleep disorders such as narcolepsy, obstructive sleep apnea, and shift work sleep disorder.",
+            "effects": "Increased wakefulness, alertness, and improved cognitive function.",
+            "dosage": "Medical dosages are carefully controlled and prescribed based on the specific sleep disorder being treated.",
+            "usage": "Orally, in tablet or capsule form.",
+            "duration": "Effects typically last for 6-12 hours.",
+            "risks": "Potential for misuse, dependence, and side effects such as nervousness and headache.",
+            "sideEffects": "Headache, nausea, and nervousness.",
+            "sexUse": "Not associated with sexual use.",
+            "mixedUse": "Combining with other substances can increase risks.",
+            "otherInformation": "Modafinil is a prescription medication and should only be used as directed by a healthcare professional."
+        }
+    },
+    {
+        "name": "Morphine / morphine",
+        "aliases": ["M", "Morph", "Miss Emma"],
+        "appearance": "Oral tablets, capsules, liquid solutions, or injectable formulations.",
+        "details": {
+            "description": "A powerful opioid analgesic used for pain relief, but also a drug with a high potential for abuse and addiction.",
+            "effects": "Pain relief, euphoria, and a sense of relaxation.",
+            "dosage": "Medical dosages are carefully controlled and based on the severity of pain and individual factors.",
+            "usage": "Orally, intravenously, or by injection.",
+            "duration": "Effects typically last 3-6 hours, depending on the formulation and dosage.",
+            "risks": "High risk of addiction, overdose, and respiratory depression.",
+            "sideEffects": "Nausea, constipation, drowsiness, and confusion.",
+            "sexUse": "Not associated with sexual use.",
+            "mixedUse": "Dangerous when mixed with other substances, especially other depressants like alcohol or benzodiazepines.",
+            "otherInformation": "Morphine is a controlled substance and is available only by prescription."
+        }
+    },
+    {
+        "name": "New Psychoactive Substances (NPS)",
+        "aliases": ["RC", "NPS"],
+        "appearance": "Varies widely depending on the specific substance, often sold as powders, pills, or liquids.",
+        "details": {
+            "description": "A broad category of synthetic drugs designed to mimic the effects of controlled substances while avoiding legal restrictions.",
+            "effects": "Effects vary widely depending on the specific NPS, ranging from stimulant-like effects to hallucinations.",
+            "dosage": "Highly variable and depends on the specific substance. The purity and composition can be uncertain with NPS.",
+            "usage": "Orally, through various forms such as powders, pills, or liquids.",
+            "duration": "Duration varies widely depending on the specific substance.",
+            "risks": "High risk of unknown composition, potential for severe health effects, and legal consequences.",
+            "sideEffects": "Can range from mild to severe depending on the substance, including anxiety, paranoia, and physical health issues.",
+            "sexUse": "Not associated with sexual use.",
+            "mixedUse": "Extremely unpredictable when mixed with other substances.",
+            "otherInformation": "NPS are a constantly evolving and challenging category of substances that may evade legal regulations."
+        }
+    },
+    {
+        "name": "Neuroleptics",
+        "aliases": ["Prazine®", "Haldol®", "Nozinan® and others"],
+        "appearance": "Available in various forms including oral tablets, liquid solutions, and injectable formulations.",
+        "details": {
+            "description": "A class of drugs primarily used to manage psychiatric disorders such as schizophrenia and bipolar disorder.",
+            "effects": "Reduced symptoms of psychosis and mood stabilization.",
+            "dosage": "Medical dosages are carefully controlled and tailored to individual patient needs.",
+            "usage": "Orally, intravenously, or by injection, as prescribed by a healthcare professional.",
+            "duration": "Effects typically last for several hours.",
+            "risks": "Potential for side effects including weight gain, metabolic changes, and movement disorders.",
+            "sideEffects": "Sedation, weight gain, tremors, and extrapyramidal symptoms.",
+            "sexUse": "Not associated with sexual use.",
+            "mixedUse": "Should not be mixed with other substances without medical supervision.",
+            "otherInformation": "Neuroleptics are prescription medications and should only be used as directed by a healthcare professional."
+        }
+    },
+    {
+        "name": "Oxazepam (Seresta®)",
+        "aliases": [],
+        "appearance": "Oral tablets or capsules.",
+        "details": {
+            "description": "A medication of the benzodiazepine class used to treat anxiety disorders and alcohol withdrawal.",
+            "effects": "Sedation, reduced anxiety, muscle relaxation.",
+            "dosage": "Medical dosages are carefully controlled and prescribed based on individual needs.",
+            "usage": "Orally, in tablet or capsule form.",
+            "duration": "Effects typically last for several hours.",
+            "risks": "Potential for dependence, withdrawal symptoms, and respiratory depression when misused.",
+            "sideEffects": "Drowsiness, dizziness, and impaired coordination.",
+            "sexUse": "Can impair sexual performance.",
+            "mixedUse": "Dangerous when combined with other depressants like alcohol or opioids.",
+            "otherInformation": "Oxazepam is a prescription medication and should only be used as directed by a healthcare professional."
+        }
+    },
+    {
+        "name": "Oxycodone",
+        "aliases": ["Oxy", "Hillbilly Heroin", "Blueberries"],
+        "appearance": "Oral tablets, capsules, or liquid solutions.",
+        "details": {
+            "description": "A powerful opioid analgesic used to manage severe pain, but it is also highly addictive and subject to abuse.",
+            "effects": "Pain relief, euphoria, and a sense of relaxation.",
+            "dosage": "Medical dosages are carefully controlled and prescribed based on the severity of pain and individual factors.",
+            "usage": "Orally, sometimes in combination with other non-opioid pain relievers.",
+            "duration": "Effects typically last 3-6 hours, depending on the formulation and dosage.",
+            "risks": "High risk of addiction, overdose, and respiratory depression.",
+            "sideEffects": "Nausea, constipation, drowsiness, and confusion.",
+            "sexUse": "Not associated with sexual use.",
+            "mixedUse": "Dangerous when mixed with other substances, especially other depressants like alcohol or benzodiazepines.",
+            "otherInformation": "Oxycodone is a controlled substance and is available only by prescription."
+        }
+    },
+    {
+        "name": "Poppers",
+        "aliases": [],
+        "appearance": "Often sold in small bottles as a volatile liquid, which releases a vapor when opened.",
+        "details": {
+            "description": "A group of chemicals known as alkyl nitrites, which are inhaled for their short-lasting, intense, and pleasurable effects.",
+            "effects": "Rapid head rush, muscle relaxation, and enhanced sexual pleasure.",
+            "dosage": "Poppers are typically inhaled directly from the bottle, but their use can be unpredictable.",
+            "usage": "Inhaling the vapor directly from the bottle.",
+            "duration": "Effects last for a few minutes or less.",
+            "risks": "Potential for dangerous interactions with other drugs, as well as risks associated with inhaling volatile chemicals.",
+            "sideEffects": "Headache, dizziness, and potential harm from improper inhalation.",
+            "sexUse": "Commonly used to enhance sexual experiences due to its muscle relaxant effects.",
+            "mixedUse": "Should not be mixed with other substances, especially erectile dysfunction medications.",
+            "otherInformation": "Poppers are often sold as a 'room odorizer' or 'video head cleaner' to circumvent legal restrictions."
+        }
+    },
+    {
+        "name": "Psilocybin / Psilocin",
+        "aliases": ["Psilos", "Magic mushrooms", "Magic mushrooms"],
+        "appearance": "Dried or fresh mushrooms containing psilocybin and psilocin, or as a brown powder in capsules.",
+        "details": {
+            "description": "Psychedelic compounds found in certain species of mushrooms, known for their hallucinogenic properties.",
+            "effects": "Altered perception, visual hallucinations, and introspective experiences.",
+            "dosage": "Dosages vary depending on the specific mushroom species and preparation method.",
+            "usage": "Orally, by consuming dried or fresh mushrooms, or as a brown powder in capsules.",
+            "duration": "Effects can last 4-6 hours.",
+            "risks": "Potential for adverse reactions, psychological distress, and flashbacks.",
+            "sideEffects": "Nausea, vomiting, confusion, and altered thought processes.",
+            "sexUse": "Not typically associated with sexual use.",
+            "mixedUse": "Should not be mixed with other substances, especially other psychedelics.",
+            "otherInformation": "Psilocybin-containing mushrooms are illegal in many countries and are subject to legal restrictions."
+        }
+    },
+    {
+        "name": "Salvia divinorum",
+        "aliases": ["Aztec sage", "Ska María Pastora", "Purple Sticky"],
+        "appearance": "Dried leaves, extracts, or tinctures made from the Salvia divinorum plant.",
+        "details": {
+            "description": "A psychoactive plant native to Mexico known for its powerful but short-lived hallucinogenic effects.",
+            "effects": "Intense visual and sensory distortions, time distortion, and dissociation from reality.",
+            "dosage": "Dosages vary depending on the form of the substance, but it is considered extremely potent.",
+            "usage": "Orally, by chewing the leaves, smoking, or vaporizing extracts.",
+            "duration": "Effects are brief, typically lasting only a few minutes to around 30 minutes.",
+            "risks": "Potential for unpredictable, intense experiences, and impaired judgment.",
+            "sideEffects": "Disorientation, confusion, and the possibility of physical harm during intense experiences.",
+            "sexUse": "Not typically associated with sexual use.",
+            "mixedUse": "Should not be mixed with other substances, especially other hallucinogens.",
+            "otherInformation": "Salvia divinorum is regulated or illegal in some countries due to its potent effects."
+        }
+    },
+    {
+        "name": "Synthetic cannabinoids",
+        "aliases": ["Spice"],
+        "appearance": "Sprayed onto plant material to resemble natural cannabis, sold as dried plant material or liquid for use in e-cigarettes.",
+        "details": {
+            "description": "A group of synthetic compounds designed to mimic the effects of THC, the active compound in natural cannabis.",
+            "effects": "Varies widely depending on the specific synthetic cannabinoid, often unpredictable and intense.",
+            "dosage": "Highly variable, and the purity and composition can be uncertain with synthetic cannabinoids.",
+            "usage": "Smoked, vaporized, or inhaled, often sold as an herbal smoking blend or as a liquid for use in e-cigarettes.",
+            "duration": "Effects can be very brief, often lasting only a short time.",
+            "risks": "High risk of adverse reactions, including anxiety, paranoia, hallucinations, and serious health effects.",
+            "sideEffects": "Nausea, anxiety, rapid heartbeat, and confusion.",
+            "sexUse": "Not typically associated with sexual use.",
+            "mixedUse": "Should not be mixed with other substances.",
+            "otherInformation": "Synthetic cannabinoids are often marketed as a legal or safe alternative to natural cannabis but can be dangerous."
+        }
+    },
+    {
+        "name": "Tobacco (nicotine)",
+        "aliases": [],
+        "appearance": "Found in various forms including cigarettes, cigars, pipe tobacco, and smokeless products like chewing tobacco and snuff.",
+        "details": {
+            "description": "A plant-based substance containing the alkaloid nicotine, known for its addictive properties and widespread use.",
+            "effects": "Stimulation, relaxation, and reduced stress or anxiety, but it is highly addictive.",
+            "dosage": "Nicotine levels vary depending on the tobacco product, often measured in milligrams per cigarette or cigar.",
+            "usage": "Orally or by inhalation through smoking or smokeless products.",
+            "duration": "Nicotine's effects can be felt quickly and last for a short duration, leading to frequent use.",
+            "risks": "Highly addictive, with potential for serious health consequences including cancer, heart disease, and respiratory issues.",
+            "sideEffects": "Nausea, dizziness, increased heart rate, and cravings during withdrawal.",
+            "sexUse": "Not typically associated with sexual use.",
+            "mixedUse": "Combining with other substances can increase risks, especially when combined with alcohol.",
+            "otherInformation": "Tobacco use is a leading cause of preventable deaths worldwide and is subject to various legal restrictions."
+        }
+    },
+    {
+        "name": "Tilidine",
+        "aliases": ["Tilis"],
+        "appearance": "Oral tablets or capsules.",
+        "details": {
+            "description": "A synthetic opioid analgesic used for pain relief, often in combination with other medications.",
+            "effects": "Pain relief, relaxation, and euphoria.",
+            "dosage": "Medical dosages are carefully controlled and prescribed based on the severity of pain and individual factors.",
+            "usage": "Orally, in tablet or capsule form.",
+            "duration": "Effects typically last 3-6 hours, depending on the formulation and dosage.",
+            "risks": "High risk of addiction, overdose, and respiratory depression.",
+            "sideEffects": "Nausea, constipation, drowsiness, and confusion.",
+            "sexUse": "Not associated with sexual use.",
+            "mixedUse": "Dangerous when mixed with other substances, especially other depressants like alcohol or benzodiazepines.",
+            "otherInformation": "Tilidine is a controlled substance and is available only by prescription."
+        }
+    },
+    {
+        "name": "Tramadol",
+        "aliases": ["Ultras", "Chillpills", "Trammies"],
+        "appearance": "Oral tablets, capsules, or liquid formulations.",
+        "details": {
+            "description": "A synthetic opioid analgesic used for pain relief, particularly for moderate to moderately severe pain.",
+            "effects": "Pain relief, relaxation, and potential for mild euphoria.",
+            "dosage": "Medical dosages are carefully controlled and prescribed based on the specific pain condition and individual factors.",
+            "usage": "Orally, in tablet, capsule, or liquid form.",
+            "duration": "Effects typically last 4-6 hours.",
+            "risks": "Potential for misuse, addiction, and side effects such as nausea and dizziness.",
+            "sideEffects": "Nausea, vomiting, dizziness, and constipation.",
+            "sexUse": "Not associated with sexual use.",
+            "mixedUse": "Dangerous when mixed with other substances, especially other depressants like alcohol or benzodiazepines.",
+            "otherInformation": "Tramadol is a controlled substance in some countries and is available only by prescription."
+        }
+    },
+    {
+        "name": "Viagra®",
+        "aliases": [],
+        "appearance": "Oral tablets.",
+        "details": {
+            "description": "A medication used to treat erectile dysfunction by increasing blood flow to the penis.",
+            "effects": "Improved ability to achieve and maintain an erection.",
+            "dosage": "Medical dosages are carefully controlled and prescribed by a healthcare professional.",
+            "usage": "Orally, in tablet form.",
+            "duration": "Effects typically last for a few hours.",
+            "risks": "Potential for side effects such as headache, flushing, and interactions with other medications.",
+            "sideEffects": "Headache, flushing, indigestion, and visual disturbances.",
+            "sexUse": "Specifically used to enhance sexual performance.",
+            "mixedUse": "Should not be mixed with other substances without medical guidance.",
+            "otherInformation": "Viagra® is a prescription medication and should only be used as directed by a healthcare professional."
+        }
+    }
+    ]
+                    

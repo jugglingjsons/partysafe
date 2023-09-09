@@ -1,8 +1,8 @@
-// import dbConnect from "../../../../Db/DbConnect";
-// import User from "../../../../Db/models/User";
+// // import dbConnect from "../../../../Db/DbConnect";
+// // import User from "../../../../Db/models/User";
 
-// export default async function handler(request, response) {
-//   await dbConnect();
+// // export default async function handler(request, response) {
+// //   await dbConnect();
 
 //   const user = request.session.get("user"); // Get the user from the session
 
