@@ -1,25 +1,63 @@
-// // import dbConnect from "../../../../Db/DbConnect";
-// // import User from "../../../../Db/models/User";
+import useSWR, { mutate } from 'swr';
+import Image from 'next/image';
+import Link from 'next/link';
+import { HeartIcon } from '@heroicons/react/solid';
 
-// // export default async function handler(request, response) {
-// //   await dbConnect();
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
-//   const user = request.session.get("user"); // Get the user from the session
+export default function Favorites() {
+  const { data: likedProducts } = useSWR('/api/favorites', fetcher);
 
-//   if (!user) {
-//     return response.status(401).json({ message: "Unauthorized" });
-//   }
+  if (!likedProducts) return <div>Loading...</div>;
 
-//   if (request.method === "GET") {
-//     try {
-//       const likedProducts = user.favorites; // Assuming the user's favorites are stored in the "favorites" field
+  const handleLikeClick = async (productId) => {
+    try {
+      const response = await fetch('/api/favorites', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ productId }),
+      });
 
-//       console.log("Fetched Liked Products:", likedProducts);
-//       return response.status(200).json(likedProducts);
-//     } catch (error) {
-//       return response.status(500).json({ message: "Server error." });
-//     }
-//   } else {
-//     return response.status(405).json({ message: "Method not allowed" });
-//   }
-// }
+      if (response.ok) {
+        // Trigger a re-fetch of liked products after adding
+        mutate('/api/favorites');
+        console.log('Product added to favorites successfully');
+      } else {
+        console.error('Failed to add product to favorites');
+      }
+    } catch (error) {
+      console.error('Error adding product to favorites:', error);
+    }
+  };
+
+  return (
+    <div className="bg-white min-h-screen text-gray-800">
+      <h1 className="text-center my-4">Your Favorites</h1>
+      <main className="p-4 grid grid-cols-3 gap-4">
+        {likedProducts.map((product) => (
+          <div key={product._id} className="border p-2 rounded">
+            <Link href={`/drugkit/${product.productId}`}>
+              <h2 className="text-center mb-2">{product.name}</h2>
+              <Image
+                src={product.image_url}
+                alt={product.name}
+                width={100}
+                height={100}
+              />
+            </Link>
+            <p>{product.description}</p>
+            <p>Price: {product.price}</p>
+            <button
+              className="like-button mt-2"
+              onClick={() => handleLikeClick(product.productId)}
+            >
+              <HeartIcon className="h-5 w-5 text-red-500" />
+            </button>
+          </div>
+        ))}
+      </main>
+    </div>
+  );
+}
