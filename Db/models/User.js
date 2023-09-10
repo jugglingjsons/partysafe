@@ -6,12 +6,12 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
   name: { type: String, required: true },
   nickname: { type: String, required: true },
-  email: { type: String, required: true, unique: true }, // Make email unique
-  Image: { type: String, required: true },
-  userId: { type: String, required: true },
-  cart: [{ type: Schema.Types.ObjectId, ref: 'Drugkit' }], // Use an array of ObjectIds to store references to drug-kits in the cart
+  email: { type: String, required: true, unique: true },
+  image: { type: String, required: true }, // Corrected field name
+  userId: { type: String, required: true }, // Adjust the data type if needed
+  cart: [{ type: Schema.Types.ObjectId, ref: 'Drugkit' }],
   type: { type: String, required: true },
-  favorites: [{ type: Schema.Types.ObjectId, ref: 'Drugkit' }], // Use an array of ObjectIds to store references to liked drug-kits
+  favorites: [{ type: Schema.Types.ObjectId, ref: 'Drugkit' }],
 });
 
 const User = mongoose.models.User || mongoose.model("User", userSchema);

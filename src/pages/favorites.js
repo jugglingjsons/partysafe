@@ -7,9 +7,19 @@ import { getSession } from 'next-auth/react';
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Favorites() {
-  const { data: likedProducts } = useSWR('/api/favorites', fetcher);
+  const { data: likedProducts, error } = useSWR('/api/favorites', fetcher);
+
+  if (error) {
+    console.error('Error fetching likedProducts:', error);
+    return <div>Error loading data</div>;
+  }
 
   if (!likedProducts) return <div>Loading...</div>;
+
+  if (!Array.isArray(likedProducts)) {
+    console.error('likedProducts is not an array:', likedProducts);
+    return <div>Data format error</div>;
+  }
 
   return (
     <div className="bg-white min-h-screen text-gray-800">
@@ -37,6 +47,7 @@ export default function Favorites() {
     </div>
   );
 }
+
 
 
 

@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { useSession, signOut } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 const Header = () => {
     const [sloganVisible, setSloganVisible] = useState(false);
@@ -17,7 +17,7 @@ const Header = () => {
     const { t, i18n } = useTranslation();
     const { data: session } = useSession();
 
-    const fullSlogan = "  Stop wondering what’s inside your drugs. Start making informed decisions.  ";
+    const fullSlogan = "  Stop wondering what’s inside your drugs. Start making informed decisionsStop wondering what&apos;s inside your drugs. Start making informed decisions.  ";
 
     const intervalRef = useRef();
 
@@ -29,32 +29,33 @@ const Header = () => {
         return () => clearTimeout(timeout);
     }, []);
 
-    const startSloganAnimation = () => {
-        let index = 0;
-        intervalRef.current = setInterval(() => {
-            if (index < fullSlogan.length) {
-                setSloganText((prev) => prev + fullSlogan[index]);
-                index += 1;
-            } else {
-                clearInterval(intervalRef.current);
-                setTimeout(() => {
-                    setSloganText('');
-                    startSloganAnimation();
-                }, 1000);
-            }
-        }, 100);
-    };
+//     const startSloganAnimation = () => {
+//       let index = 0;
+  
+//       const animate = () => {
+//           if (index < fullSlogan.length) {
+//               setSloganText((prev) => prev + fullSlogan[index]);
+//               index += 1;
+//               requestAnimationFrame(animate); // Continue animation
+//           }
+//       };
+  
+//       // Start the animation
+//       animate();
+//   };
+  
 
-    useEffect(() => {
-        if (sloganVisible) {
-            startSloganAnimation();
-        } else {
-            clearInterval(intervalRef.current);
-        }
-        return () => {
-            clearInterval(intervalRef.current);
-        };
-    }, [sloganVisible, fullSlogan]);
+//     useEffect(() => {
+//       if (sloganVisible) {
+//           startSloganAnimation();
+//       } else {
+//           clearInterval(intervalRef.current);
+//       }
+//       return () => {
+//           clearInterval(intervalRef.current);
+//       };
+//   }, [sloganVisible, startSloganAnimation]); // Include startSloganAnimation in the dependency array
+  
 
     useEffect(() => {
         const interval = setInterval(() => {

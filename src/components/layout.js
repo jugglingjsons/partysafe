@@ -1,4 +1,5 @@
 import { useTranslation } from 'next-i18next';
+import Searchbar from '../components/ui/Searchbar';
 
 const Layout = ({ children }) => {
   const { t } = useTranslation(); // Access the t function for translations
