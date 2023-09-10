@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
-import { useSession, signOut } from 'next-auth/react'; // Import useSession and signOut
+import { useSession, signOut } from 'next-auth/react';
 
 const Header = () => {
     const [sloganVisible, setSloganVisible] = useState(false);
@@ -15,9 +15,9 @@ const Header = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const router = useRouter();
     const { t, i18n } = useTranslation();
-    const { data: session } = useSession(); // Access the user session
+    const { data: session } = useSession();
 
-    const fullSlogan = t('slogan');
+    const fullSlogan = "  Stop wondering what’s inside your drugs. Start making informed decisions.  ";
 
     const intervalRef = useRef();
 
@@ -29,20 +29,31 @@ const Header = () => {
         return () => clearTimeout(timeout);
     }, []);
 
-    useEffect(() => {
+    const startSloganAnimation = () => {
         let index = 0;
-        if (sloganVisible) {
-            intervalRef.current = setInterval(() => {
-                if (index < fullSlogan.length) {
-                    setSloganText((prev) => prev + fullSlogan[index]);
-                    index += 1;
-                } else {
-                    clearInterval(intervalRef.current);
-                }
-            }, 100);
-        }
+        intervalRef.current = setInterval(() => {
+            if (index < fullSlogan.length) {
+                setSloganText((prev) => prev + fullSlogan[index]);
+                index += 1;
+            } else {
+                clearInterval(intervalRef.current);
+                setTimeout(() => {
+                    setSloganText('');
+                    startSloganAnimation();
+                }, 1000);
+            }
+        }, 100);
+    };
 
-        return () => clearInterval(intervalRef.current);
+    useEffect(() => {
+        if (sloganVisible) {
+            startSloganAnimation();
+        } else {
+            clearInterval(intervalRef.current);
+        }
+        return () => {
+            clearInterval(intervalRef.current);
+        };
     }, [sloganVisible, fullSlogan]);
 
     useEffect(() => {
@@ -77,7 +88,7 @@ const Header = () => {
                         {session ? (
                             <button
                                 className="text-gray-600 cursor-pointer text-lg"
-                                onClick={() => signOut()} // Sign out the user
+                                onClick={() => signOut()}
                             >
                                 {t('logOut')}
                             </button>
@@ -105,7 +116,6 @@ const Header = () => {
                         {sloganText}
                     </p>
                 </div>
-
             </header>
 
             <div className="container mx-auto mt-4 flex justify-center" style={{ margin: '20 20px' }}>
