@@ -1,10 +1,11 @@
+import { useTranslation } from 'next-i18next';
 import React from 'react';
 import Image from 'next/image';
 import { HeartIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
 
 const DrugkitCardThumbnail = ({ drugkit, onLike, likedProducts }) => {
-    const isLiked = likedProducts.some((like) => like._id === drugkit._id);
+    const isLiked = Array.isArray(likedProducts) && likedProducts.some((like) => like._id === drugkit._id);
 
     return (
         <div className="border p-2 rounded relative bg-white shadow-lg">

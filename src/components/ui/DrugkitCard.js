@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { HeartIcon, ShoppingCartIcon } from '@heroicons/react/solid';
+import { useTranslation } from 'next-i18next';
 
 const DrugkitCard = ({ drugkit, onLike, onAddToCart }) => {
     return (

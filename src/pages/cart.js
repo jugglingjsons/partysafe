@@ -1,47 +1,72 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Cart from '../components/ui/Cart';
 
-export default function Cart() {
-    const [cartItems, setCartItems] = useState([
-        // List of drugkits in the cart
-    ]);
+export default function CartPage({ user }) {
+  const [cartItems, setCartItems] = useState([]);
 
-    // Calculate total price of items in the cart
-    const totalAmount = cartItems.reduce((total, item) => total + item.price, 0);
-
-    // Handle payment submission
-    const handlePayment = async () => {
-        // Implement payment logic here (credit card or Bitcoin)
-        // For simplicity, this example just logs a message
-        console.log('Payment successful');
+  useEffect(() => {
+    // Fetch cart items for the authenticated user from the database
+    const fetchCartItems = async () => {
+      try {
+        // Replace this with your database query to get user's cart items
+        const response = await fetch(`/api/cart?userId=${user.id}`);
+        if (response.ok) {
+          const data = await response.json();
+          setCartItems(data.cartItems);
+        }
+      } catch (error) {
+        console.error('Error fetching cart items:', error);
+      }
     };
 
-    return (
-        <div className="bg-white min-h-screen text-gray-800">
-            <h1 className="text-center my-4">Your Cart</h1>
-            <div className="p-4">
-                {cartItems.map(item => (
-                    <div key={item._id} className="border p-2 rounded mb-2">
-                        <h2>{item.name}</h2>
-                        <p>Price: ${item.price}</p>
-                    </div>
-                ))}
-                <div className="text-right">
-                    <p>Total Amount: ${totalAmount}</p>
-                    <button
-                        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
-                        onClick={handlePayment}
-                    >
-                        Pay with Credit Card
-                    </button>
-                    <button
-                        className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded ml-2"
-                        onClick={handlePayment}
-                    >
-                        Pay with Bitcoin
-                    </button>
-                </div>
-            </div>
-        </div>
-    );
-}
+    if (user) {
+      fetchCartItems();
+    }
+  }, [user]);
 
+  // Handle item deletion
+  const handleDeleteItem = async (itemId) => {
+    try {
+      // Replace this with your logic to delete an item from the cart
+      await fetch(`/api/cart/${itemId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      // Update the cart items in the state
+      setCartItems((prevItems) => prevItems.filter((item) => item._id !== itemId));
+    } catch (error) {
+      console.error('Error deleting item from cart:', error);
+    }
+  };
+
+  // Handle order completion with Credit Card
+  const handleCompleteOrderCreditCard = async () => {
+    // Implement your order completion logic for Credit Card payment here
+    console.log('Order completed with Credit Card');
+  };
+
+  // Handle order completion with Bitcoin
+  const handleCompleteOrderBitcoin = async () => {
+    // Implement your order completion logic for Bitcoin payment here
+    console.log('Order completed with Bitcoin');
+  };
+
+  return (
+    <div>
+      <h1>Your Cart</h1>
+      <Cart cartItems={cartItems} onDeleteItem={handleDeleteItem} />
+      <div className="text-right">
+        <p>Total Amount: ${cartItems.reduce((total, item) => total + item.price, 0)}</p>
+        <button onClick={handleCompleteOrderCreditCard} className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+          Pay with Credit Card
+        </button>
+        <button onClick={handleCompleteOrderBitcoin} className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded ml-2">
+          Pay with Bitcoin
+        </button>
+      </div>
+    </div>
+  );
+}

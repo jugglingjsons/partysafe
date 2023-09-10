@@ -1,33 +1,72 @@
-import useSWR from 'swr';
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import styles from '../styles/Library.module.css';
+import Searchbar from '@/components/ui/Searchbar'; // Import the Searchbar component
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+export default function LibraryPage() {
+  const [drugLibrary, setDrugLibrary] = useState([]);
+  const [searchResults, setSearchResults] = useState([]); // State to hold search results
+  const [searchQuery, setSearchQuery] = useState(''); // State to hold search query
 
-export default function Library() {
-    const { data: drugData, error } = useSWR('/api/drug/${id}', fetcher);
+  useEffect(() => {
+    // Fetch the drug library data from your JSON file
+    fetch('/druglibrary.json')
+      .then((response) => response.json())
+      .then((data) => {
+        setDrugLibrary(data);
+        setSearchResults(data); // Initialize search results with all data
+      })
+      .catch((error) => console.error('Error fetching drug library:', error));
+  }, []);
 
-    if (error) return <div>Error loading drug data</div>;
-
-    return (
-        <div>
-            <h1>Drug Library</h1>
-            {drugData ? (
-                <div>
-                    {drugData.map((drug) => (
-                        <div key={drug._id}>
-                            <h2>{drug.name}</h2>
-                            <p>Effect: {drug.effect}</p>
-                            <p>Dosage: {drug.dosage}</p>
-                            <p>Risks: {drug.risks}</p>
-                            <p>Safer Use: {drug.saferUse}</p>
-                            <p>Mixed Use: {drug.mixedUse}</p>
-                            <p>Sex: {drug.sex}</p>
-                            <p>Synthesis Impurities: {drug.synthesisImpurities}</p>
-                        </div>
-                    ))}
-                </div>
-            ) : (
-                <div>Loading...</div>
-            )}
-        </div>
+  // Function to handle search
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+    // Filter the drug library based on the search query
+    const filteredResults = drugLibrary.filter((drug) =>
+      drug.name.toLowerCase().includes(query.toLowerCase())
     );
+    setSearchResults(filteredResults);
+  };
+
+  // Function to handle clearing the search
+  const handleClear = () => {
+    setSearchQuery('');
+    setSearchResults(drugLibrary); // Reset search results to all data
+  };
+
+  return (
+    <div className="container">
+      <h1>Drug Library</h1>
+
+      {/* Render the Searchbar component with the handleSearch and handleClear functions */}
+      <Searchbar
+        onSearch={handleSearch}
+        onClear={handleClear}
+        placeholder="Search a drug..."
+      />
+
+      <div className={styles.cardContainer}>
+        {searchResults.map((drug) => (
+          <Link key={drug.name} href={`/library/${encodeURIComponent(drug.name)}`}>
+            <div className={styles.card}>
+              <h2>{drug.name}</h2>
+              {drug.aliases && (
+                <p>
+                  <strong>Aliases:</strong> {drug.aliases.join(', ')}
+                </p>
+              )}
+              <p>
+                <strong>Appearance:</strong> {drug.appearance}
+              </p>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
 }
+
+
+
+
