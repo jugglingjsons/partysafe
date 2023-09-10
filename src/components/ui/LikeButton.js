@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { HeartIcon } from '@heroicons/react/solid';
+import { useTranslation } from 'next-i18next';
 
 const LikeButton = ({ isLiked, onLikeClick }) => {
     const [liked, setLiked] = useState(isLiked);

@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next';
 import React from 'react';
 import Image from 'next/image';
 import { HeartIcon } from '@heroicons/react/solid';

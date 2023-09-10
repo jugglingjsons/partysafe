@@ -1,6 +1,6 @@
-const path = require('path'); // Import the path module
+const path = require('path');
 
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
   images: {
     domains: ['res.cloudinary.com'],
@@ -24,6 +24,8 @@ const nextConfig = {
 
     return config;
   },
+  i18n: {
+    locales: ['en', 'fr', 'de'], // Add your desired locales here
+    defaultLocale: 'en', // Set your default locale here
+  },
 };
-
-module.exports = nextConfig;

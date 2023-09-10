@@ -1,5 +1,6 @@
 // Inside Searchbar.js
 import React, { useState } from 'react';
+import { useTranslation } from 'next-i18next';
 
 const Searchbar = ({ onSearch, onClear, placeholder }) => {
     const [searchText, setSearchText] = useState('');

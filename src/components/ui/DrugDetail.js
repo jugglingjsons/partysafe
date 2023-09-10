@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 
-export default function DrugDetail() {
+export default function DrugDetail(props) {
   const router = useRouter();
-  const { name } = props; // Use the name prop passed from the parent component
+  const { t } = useTranslation(); // Access the t function for translations
+  const { name } = props;
   const [drugDetails, setDrugDetails] = useState(null);
 
   useEffect(() => {
@@ -34,11 +36,10 @@ export default function DrugDetail() {
   }, [name]);
 
   if (!drugDetails) {
-    return <div>Loading...</div>;
+    return <div>{t('loading')}</div>;
   }
 
   const {
-    name,
     aliases,
     appearance,
     details: {
@@ -60,40 +61,40 @@ export default function DrugDetail() {
       <h1>{name}</h1>
       {aliases && (
         <p>
-          <strong>Aliases:</strong> {aliases.join(', ')}
+          <strong>{t('aliases')}:</strong> {aliases.join(', ')}
         </p>
       )}
       <p>
-        <strong>Appearance:</strong> {appearance}
+        <strong>{t('appearance')}:</strong> {appearance}
       </p>
-      <h2>Details:</h2>
+      <h2>{t('details')}:</h2>
       <p>{description}</p>
       <p>
-        <strong>Effects:</strong> {effects}
+        <strong>{t('effects')}:</strong> {effects}
       </p>
       <p>
-        <strong>Dosage:</strong> {dosage}
+        <strong>{t('dosage')}:</strong> {dosage}
       </p>
       <p>
-        <strong>Usage:</strong> {usage}
+        <strong>{t('usage')}:</strong> {usage}
       </p>
       <p>
-        <strong>Duration:</strong> {duration}
+        <strong>{t('duration')}:</strong> {duration}
       </p>
       <p>
-        <strong>Risks:</strong> {risks}
+        <strong>{t('risks')}:</strong> {risks}
       </p>
       <p>
-        <strong>Side Effects:</strong> {sideEffects}
+        <strong>{t('sideEffects')}:</strong> {sideEffects}
       </p>
       <p>
-        <strong>Sexual Use:</strong> {sexUse}
+        <strong>{t('sexUse')}:</strong> {sexUse}
       </p>
       <p>
-        <strong>Mixed Use:</strong> {mixedUse}
+        <strong>{t('mixedUse')}:</strong> {mixedUse}
       </p>
       <p>
-        <strong>Other Information:</strong> {otherInformation}
+        <strong>{t('otherInformation')}:</strong> {otherInformation}
       </p>
     </div>
   );

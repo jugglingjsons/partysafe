@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next';
 import React, { useState, useEffect } from 'react';
 import useSWR from 'swr';
 import Searchbar from '@/components/ui/Searchbar';

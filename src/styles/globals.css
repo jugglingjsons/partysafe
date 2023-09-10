@@ -40,3 +40,63 @@ body {
 }
 
 /* You can add any other styles that you see fit to enhance the look and feel */
+
+.account-box {
+  background-color: #f5f5f5; /* Light grey background color */
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.box-title {
+  font-size: 24px; /* Bigger font size */
+  font-weight: bold; /* Bolder font weight */
+  margin-bottom: 16px; /* Add some spacing below the title */
+}
+
+.action-button {
+  background-color: #0070f3; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add transition for hover effect */
+  margin-right: 10px;
+}
+
+/* Button hover effect */
+.action-button:hover {
+  background-color: #0052cc;
+}
+
+/* Style different buttons differently */
+.view-button {
+  background-color: #28a745; /* Green for View Order button */
+}
+
+.reorder-button {
+  background-color: #ffc107; /* Yellow for Reorder button */
+}
+
+.edit-newsletter-button {
+  background-color: #17a2b8; /* Teal for Edit Newsletter button */
+}
+
+.edit-billing-button {
+  background-color: #0070f3; /* Blue for Edit Billing Address button */
+}
+
+.edit-shipping-button {
+  background-color: #0070f3; /* Blue for Edit Shipping Address button */
+}
+
+/* Your CSS file or global styles */
+.address-subtitle {
+  font-size: 1.2rem; /* Adjust the font size as needed */
+  font-weight: bold; /* Make it bolder */
+  margin-bottom: 0.5rem; /* Add some space below the subtitle */
+  color: #333; /* Define the color */
+}

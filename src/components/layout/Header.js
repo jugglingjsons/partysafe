@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
+import { useSession, signOut } from 'next-auth/react'; // Import useSession and signOut
 
 const Header = () => {
     const [sloganVisible, setSloganVisible] = useState(false);
@@ -12,9 +14,11 @@ const Header = () => {
     ]);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const router = useRouter();
-    const fullSlogan = " Stop wondering what’s inside your drugs. Start making informed decisions. ";
+    const { t, i18n } = useTranslation();
+    const { data: session } = useSession(); // Access the user session
 
-    // Use a ref to store the interval
+    const fullSlogan = t('slogan');
+
     const intervalRef = useRef();
 
     useEffect(() => {
@@ -28,7 +32,6 @@ const Header = () => {
     useEffect(() => {
         let index = 0;
         if (sloganVisible) {
-            // Assign interval to the ref
             intervalRef.current = setInterval(() => {
                 if (index < fullSlogan.length) {
                     setSloganText((prev) => prev + fullSlogan[index]);
@@ -39,9 +42,8 @@ const Header = () => {
             }, 100);
         }
 
-        // Return cleanup function
         return () => clearInterval(intervalRef.current);
-    }, [sloganVisible]);
+    }, [sloganVisible, fullSlogan]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -50,6 +52,11 @@ const Header = () => {
 
         return () => clearInterval(interval);
     }, [advertImages]);
+
+    const handleLanguageChange = (e) => {
+        const selectedLanguage = e.target.value;
+        i18n.changeLanguage(selectedLanguage);
+    };
 
     return (
         <>
@@ -62,19 +69,32 @@ const Header = () => {
                     </Link>
                     <div className="flex items-center space-x-4 ml-auto">
                         <Link href="/account" passHref>
-                            <div className="text-gray-600 cursor-pointer text-lg">My Account</div>
+                            <div className="text-gray-600 cursor-pointer text-lg">{t('myAccount')}</div>
                         </Link>
                         <Link href="/cart" passHref>
-                            <div className="text-gray-600 cursor-pointer text-lg">Checkout</div>
+                            <div className="text-gray-600 cursor-pointer text-lg">{t('checkout')}</div>
                         </Link>
-                        <Link href="/login" passHref>
-                            <div className="text-gray-600 cursor-pointer text-lg">Log In</div>
-                        </Link>
+                        {session ? (
+                            <button
+                                className="text-gray-600 cursor-pointer text-lg"
+                                onClick={() => signOut()} // Sign out the user
+                            >
+                                {t('logOut')}
+                            </button>
+                        ) : (
+                            <Link href="/login" passHref>
+                                <div className="text-gray-600 cursor-pointer text-lg">{t('logIn')}</div>
+                            </Link>
+                        )}
                         <div className="relative">
-                            <select className="block appearance-none w-full bg-white border border-gray-300 text-gray-350 py-2 px-3 pr-7 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                                <option>English</option>
-                                <option>German</option>
-                                <option>French</option>
+                            <select
+                                className="block appearance-none w-full bg-white border border-gray-300 text-gray-350 py-2 px-3 pr-7 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                value={i18n.language}
+                                onChange={handleLanguageChange}
+                            >
+                                <option value="en">English</option>
+                                <option value="de">German</option>
+                                <option value="fr">French</option>
                             </select>
                         </div>
                     </div>
@@ -86,19 +106,14 @@ const Header = () => {
                     </p>
                 </div>
 
-                <div className="container mx-auto text-center mt-4">
-                    <Link href="/category-bundles" passHref>
-                        <button className="bg-white text-black py-2 px-4 rounded text-lg">Category Bundles</button>
-                    </Link>
-                </div>
             </header>
 
             <div className="container mx-auto mt-4 flex justify-center" style={{ margin: '20 20px' }}>
-                <Image 
-                    src={advertImages[currentImageIndex]} 
-                    alt={`Advertisement ${currentImageIndex + 1}`} 
-                    className="object-cover rounded mx-auto" 
-                    style={{ maxHeight: 'calc(100vh - 100px)', width: 'calc(100% - 40px)' }} 
+                <Image
+                    src={advertImages[currentImageIndex]}
+                    alt={`Advertisement ${currentImageIndex + 1}`}
+                    className="object-cover rounded mx-auto"
+                    style={{ maxHeight: 'calc(100vh - 100px)', width: 'calc(100% - 40px)' }}
                     width={1200}
                     height={800}
                 />
@@ -108,4 +123,3 @@ const Header = () => {
 };
 
 export default Header;
-
