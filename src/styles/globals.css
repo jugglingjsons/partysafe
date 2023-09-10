@@ -100,3 +100,34 @@ body {
   margin-bottom: 0.5rem; /* Add some space below the subtitle */
   color: #333; /* Define the color */
 }
+
+.auth-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff; /* Adjust background color as needed */
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out; /* Adjust animation duration as needed */
+  z-index: 9999; /* Ensure the animation appears above other content */
+}
+
+.auth-animation.fade-out {
+  opacity: 0;
+  pointer-events: none; /* Disable interactions with the fading out element */
+}
+
+.logo {
+  font-size: 4rem; /* Adjust the font size for your logo */
+  /* Additional logo styling, e.g., font-family, colors, etc. */
+}
+
+.homepage-content {
+  /* Styles for your homepage content */
+}
+
