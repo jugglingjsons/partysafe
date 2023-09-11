@@ -1,27 +1,30 @@
 import { useState, useEffect } from 'react';
-import Cart from '../components/ui/Cart';
+import { useSession } from 'next-auth/react';
+import Cart from '../components/cart';
 
-export default function CartPage({ user }) {
+export default function CartPage() {
+  const { data: user } = useSession(); // Use the session hook to get the user data
+  console.log('User:', user); // Debugging statement
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     // Fetch cart items for the authenticated user from the database
     const fetchCartItems = async () => {
       try {
-        // Replace this with your database query to get user's cart items
-        const response = await fetch(`/api/cart?userId=${user.id}`);
-        if (response.ok) {
-          const data = await response.json();
-          setCartItems(data.cartItems);
+        if (user) {
+          // Replace this with your database query to get user's cart items
+          const response = await fetch(`/api/cart?userId=${user.id}`);
+          if (response.ok) {
+            const data = await response.json();
+            setCartItems(data.cartItems);
+          }
         }
       } catch (error) {
         console.error('Error fetching cart items:', error);
       }
     };
 
-    if (user) {
-      fetchCartItems();
-    }
+    fetchCartItems();
   }, [user]);
 
   // Handle item deletion
@@ -60,10 +63,16 @@ export default function CartPage({ user }) {
       <Cart cartItems={cartItems} onDeleteItem={handleDeleteItem} />
       <div className="text-right">
         <p>Total Amount: ${cartItems.reduce((total, item) => total + item.price, 0)}</p>
-        <button onClick={handleCompleteOrderCreditCard} className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+        <button
+          onClick={handleCompleteOrderCreditCard}
+          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+        >
           Pay with Credit Card
         </button>
-        <button onClick={handleCompleteOrderBitcoin} className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded ml-2">
+        <button
+          onClick={handleCompleteOrderBitcoin}
+          className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded ml-2"
+        >
           Pay with Bitcoin
         </button>
       </div>

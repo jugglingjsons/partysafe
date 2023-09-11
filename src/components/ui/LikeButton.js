@@ -5,9 +5,35 @@ import { useTranslation } from 'next-i18next';
 const LikeButton = ({ isLiked, onLikeClick }) => {
     const [liked, setLiked] = useState(isLiked);
 
-    const toggleLike = () => {
+    const toggleLike = async () => {
+        // Toggle the liked state locally
         setLiked(!liked);
-        onLikeClick(!liked); // Pass the updated like status to the parent component
+
+        // Make an API call to update the liked status on the server
+        try {
+            const response = await fetch('/api/drugkit/like', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ liked: !liked }), // Invert the liked status
+            });
+
+            if (!response.ok) {
+                // Revert the liked state if the API call fails
+                setLiked(!liked);
+                console.error('Failed to update liked status on the server');
+            } else {
+                // Call the parent component's callback with the updated liked status
+                onLikeClick(!liked);
+            }
+        } catch (error) {
+            // Handle API call error
+            console.error('Error updating liked status:', error);
+
+            // Revert the liked state if there's an error
+            setLiked(!liked);
+        }
     };
 
     return (

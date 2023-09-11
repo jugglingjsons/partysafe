@@ -4,13 +4,18 @@ import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import { useState } from 'react';
 import Image from 'next/image'; // Import the Image component
+import { useSession } from 'next-auth/react'; // Import the useSession hook
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function ProductDetailsPage() {
+  const { data: session } = useSession(); // Use the session hook to get the user data
+  console.log('Session:', session); // Debugging statement
   const router = useRouter();
   const { id } = router.query;
+  console.log('Id:', id); // Debugging statement
   const [cartCount, setCartCount] = useState(0);
+  const [isLiked, setIsLiked] = useState(false); // State to track if the product is liked
 
   // Fetch product details using SWR
   const { data: product, error } = useSWR(`/api/drugkit/${id}`, fetcher);
@@ -20,13 +25,37 @@ export default function ProductDetailsPage() {
   if (!product) return <div>Loading...</div>;
 
   // Function to handle like button click
-  const handleLikeClick = (isLiked) => {
-    console.log(`Product liked: ${isLiked}`);
-  };
+const handleLikeClick = async (isLiked) => {
+  const productId = product._id; // Assuming product._id is the ID of the product
+
+  try {
+      console.log('ProductId:', productId); // Debugging statement
+      console.log('IsLiked:', isLiked); // Debugging statement
+
+      const response = await fetch(`/api/favorites/${productId}`, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ productId, isLiked }), // Include productId and isLiked in the request body
+      });
+
+      if (response.ok) {
+          console.log(`Product liked: ${isLiked}`);
+          setLiked(isLiked); // Update the liked state
+      } else {
+          console.error('Failed to like/unlike the product');
+      }
+  } catch (error) {
+      console.error('Error liking/unliking the product:', error);
+  }
+};
+
 
   // Function to add the product to the cart
   const handleAddToCart = async () => {
-    const itemId = product._id; // Assuming product._id is the ID of the added product
+    const itemId = id; // Assuming product._id is the ID of the added product
+    const userId = session.user.id; // Assuming userId is the ID of the authenticated user
     const quantity = 1; // You can adjust the quantity as needed
 
     try {
@@ -35,7 +64,7 @@ export default function ProductDetailsPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ itemId, quantity }),
+        body: JSON.stringify({ itemId, userId, quantity }),
       });
 
       if (response.ok) {
