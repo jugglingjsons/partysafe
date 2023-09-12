@@ -1,8 +1,9 @@
-import { useTranslation } from "next-i18next";
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import useSWR from "swr";
 import Searchbar from "@/components/ui/Searchbar";
 import DrugkitCardThumbnail from "../components/DrugkitCardThumbnail";
+import { useSession } from "next-auth/react";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -12,10 +13,18 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [searchResults, setSearchResults] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const router = useRouter();
+  const { data: session, loading: loadingSession } = useSession();
 
   useEffect(() => {
     async function fetchLikedProducts() {
       try {
+        if (!session) {
+          // Redirect to the login page
+          router.push("/login");
+          return; // Exit the function to prevent further execution
+        }
+
         const response = await fetch("/api/favorites");
         const data = await response.json();
         setLikedProducts(data);
@@ -27,7 +36,7 @@ const Home = () => {
     }
 
     fetchLikedProducts();
-  }, []);
+  }, [session, router]);
 
   useEffect(() => {
     if (searchQuery.trim() === "") {

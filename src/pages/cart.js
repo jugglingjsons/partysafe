@@ -81,7 +81,7 @@ export default function CartPage() {
           </div>
         ))}
         <p>
-          Total Amount: $
+          Total Amount: €
           {cartItems.reduce((total, item) => total + item.price, 0)}
         </p>
         <button

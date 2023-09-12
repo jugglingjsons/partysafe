@@ -2,53 +2,58 @@ import dbConnect from "../../../../Db/DbConnect";
 import User from "../../../../Db/models/User";
 import { getSession } from "next-auth/react";
 
-export default async function handler(request, response) {
+export default async function handler(req, res) {
+  await dbConnect();
+  if (req.method === "PATCH") {
+    const userId = req.body.userid;
+    const drugkitId = req.query.id;
+    const user = await User.findByIdAndUpdate(
+      userId,
+      [
+        {
+          $set: {
+            favorites: {
+              $cond: [
+                { $in: [drugkitId, "$favorites"] },
+                { $setDifference: ["$favorites", [drugkitId]] },
+                { $concatArrays: ["$favorites", [drugkitId]] },
+              ],
+            },
+          },
+        },
+      ],
+      { new: true }
+    );
+    res.status(200).json(user.favorites);
+  }
+
   try {
-    await dbConnect();
+    if (req.method === "POST") {
+      const session = await getSession({ req });
 
-    const session = await getSession({ req: request });
-    console.log("session==============================", session);
-
-    if (request.method === "GET") {
-      const userId = session.user.id; // Get userId from the session
-      const user = await User.findById(userId);
-
-      if (!user) {
-        return response.status(404).json({ message: "User not found" });
+      if (!session) {
+        return res.status(401).json({ message: "Unauthorized" });
       }
 
-      return response.status(200).json({ favorites: user.favorites });
-    } else if (request.method === "POST") {
-      const { productId } = request.body; // Get productId from the request body
+      const userId = session.user.id;
 
-      if (!productId) {
-        return response.status(400).json({ message: "productId is required" });
+      // Update the user's document by pushing drugkitId to favorites array
+      const updatedUser = await User.findByIdAndUpdate(
+        userId,
+        { $push: { favorites: drugkitId } },
+        { new: true }
+      );
+
+      if (!updatedUser) {
+        return res.status(404).json({ message: "User not found" });
       }
 
-      const userId = session.user.id; // Get userId from the session
-      const user = await User.findById(userId);
-
-      if (!user) {
-        return response.status(404).json({ message: "User not found" });
-      }
-
-      if (user.favorites.includes(productId)) {
-        return response
-          .status(200)
-          .json({ message: "Product already in favorites" });
-      }
-
-      user.favorites.push(productId);
-      await user.save();
-
-      return response
-        .status(200)
-        .json({ message: "Product added to favorites" });
+      return res.status(200).json({ message: "Drugkit added to favorites" });
     } else {
-      return response.status(405).json({ message: "Method not allowed" });
+      return res.status(405).json({ message: "Method not allowed" });
     }
   } catch (error) {
     console.error("Error:", error);
-    return response.status(500).json({ message: "Server error" });
+    return res.status(500).json({ message: "Internal Server Error" });
   }
 }

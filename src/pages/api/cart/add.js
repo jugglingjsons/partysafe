@@ -6,30 +6,14 @@ import User from "../../../../Db/models/User";
 export default async function handler(req, res) {
   await dbConnect();
   try {
-    // Get the user's session
-    // const session = await getSession({ req });
-
-    // if (!session) {
-    //   return res.status(401).json({ message: "Unauthorized" });
-    // }
-
     if (req.method === "GET") {
       return res.status(200).json({ message: "OK" });
     }
 
     if (req.method === "PUT") {
-      // Extract item details from the request body
+      // Extract item deails from the request body
       const { itemId, userId } = req.body;
-      console.log("itemId ", itemId, userId);
-      // console.log("req.product==============================", req.product);
-      // console.log(
-      //   "req.product.id==============================",
-      //   req.product.id
-      // );
-      // console.log("itemId==============================", itemId);
-      // const userId = session.user.id;
 
-      // Connect to your MongoDB database
       try {
         const newCartEntry = await User.findByIdAndUpdate(
           userId,
@@ -39,12 +23,7 @@ export default async function handler(req, res) {
           { new: true }
         );
         res.status(200).json(newCartEntry);
-      } catch (e) {
-        console.log("e==============================", e);
-      }
-
-      // Find the user by their ID
-      // const user = await User.findById(userId);
+      } catch (e) {}
 
       if (!user) {
         return res.status(404).json({ message: "User not found" });

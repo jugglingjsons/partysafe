@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Cart = ({ cartItems, onDeleteItem }) => {
   return (
@@ -12,7 +12,7 @@ const Cart = ({ cartItems, onDeleteItem }) => {
             <li key={item._id} className="cart-item">
               <div className="cart-item-details">
                 <h3>{item.name}</h3>
-                <p>Price: ${item.price}</p>
+                <p>Price: €{item.price}</p>
                 <p>Quantity: {item.quantity}</p>
               </div>
               <div className="cart-item-actions">
