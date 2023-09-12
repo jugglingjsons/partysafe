@@ -3,6 +3,7 @@ import Image from "next/image";
 import { HeartIcon } from "@heroicons/react/solid";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import LikeButton from "@/components/ui/LikeButton";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -36,16 +37,17 @@ export default function Favorites() {
           <div key={product._id} className="border p-2 rounded">
             <Link href={`/drugkit/${product.productId}`}>
               <h2 className="text-center mb-2">{product.name}</h2>
-              <Image
-                src={product.image_url}
-                alt={product.name}
-                width={100}
-                height={100}
-              />
             </Link>
-            <button className="like-button mt-2">
-              <HeartIcon className="h-5 w-5 text-red-500" />
-            </button>
+            <Image
+              src={product.image_url}
+              alt={product.name}
+              width={100}
+              height={100}
+            />
+            <LikeButton
+              isLiked={true} // Set the liked status based on the fact that it's in favorites
+              onLikeClick={() => toggleLike(product._id)}
+            />
           </div>
         ))}
       </main>

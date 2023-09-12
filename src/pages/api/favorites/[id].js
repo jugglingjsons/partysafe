@@ -7,6 +7,7 @@ export default async function handler(req, res) {
   if (req.method === "PATCH") {
     const userId = req.body.userid;
     const drugkitId = req.query.id;
+
     const user = await User.findByIdAndUpdate(
       userId,
       [

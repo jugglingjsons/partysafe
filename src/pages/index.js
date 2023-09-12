@@ -49,8 +49,6 @@ export default function Home() {
   }, [searchQuery, products]);
 
   const toggleLike = async (product) => {
-    console.log("Product:", product);
-
     const favoritesInfo = { userid: session.user.id };
 
     const response = await fetch(`/api/favorites/${product._id}`, {
@@ -60,32 +58,6 @@ export default function Home() {
         "Content-Type": "application/json",
       },
     });
-
-    // try {
-    //   if (!session) {
-    //     // Redirect to the login page if the user is not authenticated
-    //     router.push("/login");
-    //     return;
-    //   }
-
-    //   const isAlreadyLiked = likedProducts.some(
-    //     (like) => like._id === product._id
-    //   );
-
-    //   if (isAlreadyLiked) {
-    //     const updatedLikes = likedProducts.filter(
-    //       (like) => like._id !== product._id
-    //     );
-    //     setLikedProducts(updatedLikes);
-    //     await fetch(`/api/favorites/${product._id}`, { method: "DELETE" });
-    //   } else {
-    //     const updatedLikes = [...likedProducts, product];
-    //     setLikedProducts(updatedLikes);
-    //     await fetch(`/api/favorites/${product._id}`, { method: "POST" });
-    //   }
-    // } catch (error) {
-    //   console.error("Error toggling like:", error);
-    // }
   };
 
   const handleSearch = (query) => {

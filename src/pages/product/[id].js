@@ -1,48 +1,56 @@
+import React, { useEffect, useState } from "react"; // Import useEffect and useState from React
 import LikeButton from "@/components/ui/LikeButton";
 import { ShoppingCartIcon } from "@heroicons/react/solid";
 import { useRouter } from "next/router";
 import useSWR from "swr";
-import { useState } from "react";
-import Image from "next/image"; // Import the Image component
-import { useSession } from "next-auth/react"; // Import the useSession hook
-
+import Image from "next/image";
+import { useSession } from "next-auth/react";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function ProductDetailsPage() {
   const { data: session } = useSession(); // Use the session hook to get the user data
-  console.log("Session:", session); // Debugging statement
   const router = useRouter();
   const { id } = router.query;
-  console.log("Id:", id); // Debugging statement
   const [cartCount, setCartCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false); // State to track if the product is liked
+  const [product, setProduct] = useState(null); // State to store product data
 
-  // Fetch product details using SWR
-  const { data: product, error } = useSWR(`/api/drugkit/${id}`, fetcher);
+  useEffect(() => {
+    // Fetch product details using SWR
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`/api/drugkit/${id}`);
+        if (response.ok) {
+          const data = await response.json();
+          setProduct(data);
+        } else {
+          console.error("Failed to fetch product details");
+        }
+      } catch (error) {
+        console.error("Error fetching product details:", error);
+      }
+    };
 
-  // Handle errors and loading state
-  if (error) return <div>Error loading product details</div>;
-  if (!product) return <div>Loading...</div>;
+    fetchData();
+  }, [id]); // Trigger the fetch when 'id' changes
 
   // Function to handle like button click
   const handleLikeClick = async (isLiked) => {
-    const productId = product._id; // Assuming product._id is the ID of the product
+    if (!product) return; // Ensure product data is available
+    const productId = product._id;
 
     try {
-      console.log("ProductId:", productId); // Debugging statement
-      console.log("IsLiked:", isLiked); // Debugging statement
-
       const response = await fetch(`/api/favorites/${productId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ productId, isLiked }), // Include productId and isLiked in the request body
+        body: JSON.stringify({ productId, isLiked }),
       });
 
       if (response.ok) {
+        setIsLiked(isLiked);
         console.log(`Product liked: ${isLiked}`);
-        setLiked(isLiked); // Update the liked state
       } else {
         console.error("Failed to like/unlike the product");
       }
@@ -53,17 +61,18 @@ export default function ProductDetailsPage() {
 
   // Function to add the product to the cart
   const handleAddToCart = async () => {
-    const itemId = id; // Assuming product._id is the ID of the added product
-    const userId = session.user.id; // Assuming userId is the ID of the authenticated user
-    const quantity = 1; // You can adjust the quantity as needed
-    console.log("itemId, userId, quantity ", itemId, userId, quantity);
+    if (!product || !session) return; // Ensure product data and session are available
+    const itemId = id;
+    const userId = session.user.id;
+    const quantity = 1;
+
     try {
       const response = await fetch("/api/cart/add", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ itemId, userId }),
+        body: JSON.stringify({ itemId, userId, quantity }),
       });
 
       if (response.ok) {
@@ -76,6 +85,9 @@ export default function ProductDetailsPage() {
       console.error("Error adding item to cart:", error);
     }
   };
+
+  // Render product details once available
+  if (!product) return <div>Loading...</div>;
 
   return (
     <div style={{ padding: "20px" }}>
@@ -111,7 +123,7 @@ export default function ProductDetailsPage() {
         <p>Price: {product.price}</p>
 
         {/* Like Button */}
-        <LikeButton isLiked={false} onLikeClick={handleLikeClick} />
+        <LikeButton isLiked={isLiked} onLikeClick={handleLikeClick} />
 
         {/* Add to Cart Button */}
         <div>
