@@ -50,7 +50,7 @@ export default function ProductDetailsPage() {
 
       if (response.ok) {
         setIsLiked(isLiked);
-        console.log(`Product liked: ${isLiked}`);
+        // console.log(`Product liked: ${isLiked}`);
       } else {
         console.error("Failed to like/unlike the product");
       }
@@ -77,7 +77,7 @@ export default function ProductDetailsPage() {
 
       if (response.ok) {
         setCartCount(cartCount + 1);
-        console.log("Item added to cart successfully");
+        // console.log("Item added to cart successfully");
       } else {
         console.error("Failed to add item to cart");
       }

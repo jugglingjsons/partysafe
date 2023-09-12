@@ -17,10 +17,10 @@ export default function LoginPage() {
       // Check if the user is logged in (session exists) before redirecting
       if (session) {
         // Redirect to the account page after successful sign-in
-        console.log("User session exists:", session);
+        // console.log("User session exists:", session);
         router.push("/account");
       } else {
-        console.log("User session does not exist");
+        // console.log("User session does not exist");
       }
     }
   };

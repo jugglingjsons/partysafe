@@ -1,5 +1,5 @@
 import dbConnect from "../../../../Db/DbConnect";
-import Drugkit from "../../../../Db/models/drugkit";
+import Drugkit from "../../../../Db/models/Drugkit";
 
 export default async function handler(request, response) {
   await dbConnect();

@@ -53,7 +53,6 @@ export default function Home() {
 
     const response = await fetch(`/api/favorites/${product._id}`, {
       method: "PATCH",
-      body: JSON.stringify(favoritesInfo),
       headers: {
         "Content-Type": "application/json",
       },

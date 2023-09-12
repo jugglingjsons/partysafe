@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function CartPage() {
   const { data: user } = useSession(); // Use the session hook to get the user data
-  console.log("User:", user); // Debugging statement
+  // console.log("User:", user); // Debugging statement
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
@@ -15,10 +15,10 @@ export default function CartPage() {
         if (user) {
           // Replace this with your database query to get user's cart items
           const response = await fetch("/api/cart");
-          console.log("response==============================", response);
+          // console.log("response==============================", response);
           if (response.ok) {
             const data = await response.json();
-            console.log("data==============================", data);
+            // console.log("data==============================", data);
             setCartItems(data);
           }
         }
@@ -53,13 +53,13 @@ export default function CartPage() {
   // Handle order completion with Credit Card
   const handleCompleteOrderCreditCard = async () => {
     // Implement your order completion logic for Credit Card payment here
-    console.log("Order completed with Credit Card");
+    // console.log("Order completed with Credit Card");
   };
 
   // Handle order completion with Bitcoin
   const handleCompleteOrderBitcoin = async () => {
     // Implement your order completion logic for Bitcoin payment here
-    console.log("Order completed with Bitcoin");
+    // console.log("Order completed with Bitcoin");
   };
 
   return (

@@ -19,10 +19,10 @@ export default async function handler(req, res) {
 
       // Retrieve the user's cart items from the database
       const user = await User.findById(session.user.id).populate("cart");
-      console.log("user==============================", user);
+      // console.log("user==============================", user);
       const cartItems = user.cart;
 
-      console.log("cartItems==============================", cartItems);
+      // console.log("cartItems==============================", cartItems);
       return res.status(200).json(cartItems);
     } catch (error) {
       console.error("Error:", error);

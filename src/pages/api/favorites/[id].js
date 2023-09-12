@@ -1,11 +1,17 @@
 import dbConnect from "../../../../Db/DbConnect";
 import User from "../../../../Db/models/User";
-import { getSession } from "next-auth/react";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../auth/[...nextauth]";
 
 export default async function handler(req, res) {
+  const session = await getServerSession(req, res, authOptions);
+  const userId = session.user.id;
+  if (!session) {
+    return res.status(401).json({ message: "Unauthorized" });
+  }
+
   await dbConnect();
   if (req.method === "PATCH") {
-    const userId = req.body.userid;
     const drugkitId = req.query.id;
 
     const user = await User.findByIdAndUpdate(
@@ -25,19 +31,11 @@ export default async function handler(req, res) {
       ],
       { new: true }
     );
-    res.status(200).json(user.favorites);
+    return res.status(200).json(user.favorites);
   }
 
   try {
     if (req.method === "POST") {
-      const session = await getSession({ req });
-
-      if (!session) {
-        return res.status(401).json({ message: "Unauthorized" });
-      }
-
-      const userId = session.user.id;
-
       // Update the user's document by pushing drugkitId to favorites array
       const updatedUser = await User.findByIdAndUpdate(
         userId,
