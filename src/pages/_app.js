@@ -3,6 +3,7 @@ import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import { appWithTranslation } from "next-i18next";
 
