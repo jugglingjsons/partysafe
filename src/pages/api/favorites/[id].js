@@ -20,11 +20,11 @@ export default async function handler(req, res) {
         {
           $set: {
             favorites: {
-              $cond: [
-                { $in: [drugkitId, "$favorites"] },
-                { $setDifference: ["$favorites", [drugkitId]] },
-                { $concatArrays: ["$favorites", [drugkitId]] },
-              ],
+              $cond: {
+                if: { $in: [drugkitId, "$favorites"] },
+                then: { $setDifference: ["$favorites", [drugkitId]] },
+                else: { $concatArrays: ["$favorites", [drugkitId]] },
+              },
             },
           },
         },

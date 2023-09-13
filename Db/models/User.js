@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Drugkit from "./Drugkit.js";
+import Drugkit from "../models/Drugkit.js";
 
 const { Schema } = mongoose;
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"; // Import useEffect and useState from React
+import React, { useEffect, useState } from "react";
 import LikeButton from "@/components/ui/LikeButton";
 import { ShoppingCartIcon } from "@heroicons/react/solid";
 import { useRouter } from "next/router";
@@ -8,15 +8,14 @@ import { useSession } from "next-auth/react";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function ProductDetailsPage() {
-  const { data: session } = useSession(); // Use the session hook to get the user data
+  const { data: session } = useSession();
   const router = useRouter();
   const { id } = router.query;
   const [cartCount, setCartCount] = useState(0);
-  const [isLiked, setIsLiked] = useState(false); // State to track if the product is liked
-  const [product, setProduct] = useState(null); // State to store product data
+  const [isLiked, setIsLiked] = useState(false);
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    // Fetch product details using SWR
     const fetchData = async () => {
       try {
         const response = await fetch(`/api/drugkit/${id}`);
@@ -32,11 +31,10 @@ export default function ProductDetailsPage() {
     };
 
     fetchData();
-  }, [id]); // Trigger the fetch when 'id' changes
+  }, [id]);
 
-  // Function to handle like button click
   const handleLikeClick = async (isLiked) => {
-    if (!product) return; // Ensure product data is available
+    if (!product) return;
     const productId = product._id;
 
     try {
@@ -50,7 +48,6 @@ export default function ProductDetailsPage() {
 
       if (response.ok) {
         setIsLiked(isLiked);
-        // console.log(`Product liked: ${isLiked}`);
       } else {
         console.error("Failed to like/unlike the product");
       }
@@ -59,9 +56,8 @@ export default function ProductDetailsPage() {
     }
   };
 
-  // Function to add the product to the cart
   const handleAddToCart = async () => {
-    if (!product || !session) return; // Ensure product data and session are available
+    if (!product || !session) return;
     const itemId = id;
     const userId = session.user.id;
     const quantity = 1;
@@ -77,7 +73,6 @@ export default function ProductDetailsPage() {
 
       if (response.ok) {
         setCartCount(cartCount + 1);
-        // console.log("Item added to cart successfully");
       } else {
         console.error("Failed to add item to cart");
       }
@@ -86,50 +81,48 @@ export default function ProductDetailsPage() {
     }
   };
 
-  // Render product details once available
   if (!product) return <div>Loading...</div>;
 
   return (
-    <div style={{ padding: "20px" }}>
-      {/* Header */}
-      <header
-        style={{ display: "flex", alignItems: "center", marginBottom: "20px" }}
-      >
-        <p
-          style={{ flex: 1, textAlign: "left", cursor: "pointer" }}
-          onClick={() => router.back()}
-        >
+    <div className="product-details-container">
+      {/* <header className="product-header">
+        <p onClick={() => router.back()} className="back-link">
           Back
         </p>
-        <ShoppingCartIcon className="h-6 w-6" style={{ marginRight: "10px" }} />
-        <span>{cartCount}</span>
-      </header>
+        <ShoppingCartIcon className="cart-icon" />
+        <span className="cart-count">{cartCount}</span>
+      </header> */}
 
-      {/* Product Image */}
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <Image
-          src={product.image_url}
-          alt={product.name}
-          width={300}
-          height={300}
-          objectFit="contain"
-        />
-      </div>
+      <div className="product-content">
+        <div className="product-image-container">
+          <LikeButton isLiked={isLiked} onLikeClick={handleLikeClick} />
+          <Image
+            src={product.image_url}
+            alt={product.name}
+            width={300}
+            height={300}
+            objectFit="contain"
+          />
+          <div className="price-container">
+            <h2 className="product-name">{product.name}</h2>
+            <p className="product-price">{product.price}€</p>
+            <button onClick={handleAddToCart} className="add-to-cart-button">
+              <ShoppingCartIcon className="add-to-cart-icon" />
+              <span className="cart-count">{cartCount}</span>
+              <h1> </h1>
+              Add to cart
+            </button>
+          </div>
+        </div>
 
-      {/* Product Details */}
-      <div style={{ textAlign: "center", padding: "20px" }}>
-        <h2>{product.name}</h2>
-        <p>Description: {product.description}</p>
-        <p>Price: {product.price}</p>
+        <div className="product-description">
+          <h3 className="section-title">Description:</h3>
+          <p>{product.description}</p>
+        </div>
 
-        {/* Like Button */}
-        <LikeButton isLiked={isLiked} onLikeClick={handleLikeClick} />
-
-        {/* Add to Cart Button */}
-        <div>
-          <button onClick={handleAddToCart} style={{ marginRight: "10px" }}>
-            Add to cart
-          </button>
+        <div className="product-instructions">
+          <h3 className="section-title">Instructions:</h3>
+          <p>{product.instructions}</p>
         </div>
       </div>
     </div>
