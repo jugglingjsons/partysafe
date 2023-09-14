@@ -18,6 +18,16 @@ export default function Support() {
   return (
     <div className={styles["support-container"]}>
       <h1 className={styles["support-title"]}>Your Support</h1>
+      <div className={styles["image-container"]}>
+        <Image
+          src="/support.png" // Ensure the path is correct
+          alt="Support"
+          width={400} // Adjust the width as needed
+          height={200} // Adjust the height as needed
+          className={styles["support-image"]}
+          layout="responsive" // Use "responsive" to maintain aspect ratio
+        />
+      </div>
       <h2 className={styles["support-description"]}>
         Find confidential advice nearby. Find accepting drug counseling and drug
         checking services nearby. No strings attached.
@@ -38,6 +48,18 @@ export default function Support() {
             </li>
           ))}
         </ul>
+        {links.length > 3 && (
+          <div className={styles["animation-container"]}>
+            <Image
+              src="/support.gif" // Replace with your GIF animation source
+              alt="Support Animation"
+              width={300} // Adjust the width as needed
+              height={150} // Adjust the height as needed
+              priority={true}
+              className={styles["animation-image"]}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
