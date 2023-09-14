@@ -7,6 +7,7 @@ import Chatbot from "react-chatbot-kit";
 import config from "../components/bot/config";
 import MessageParser from "../components/bot/MessageParser";
 import ActionProvider from "../components/bot/ActionProvider";
+import Image from "next/image";
 
 export default function Library({ drugLibraryData }) {
   const [drugLibrary, setDrugLibrary] = useState([]);
@@ -53,7 +54,15 @@ export default function Library({ drugLibraryData }) {
   return (
     <div className="container">
       <h1>Drug Library</h1>
-
+      <div className={styles["image-container"]}>
+        <Image
+          src="/support.png" // Replace with your image source
+          alt="Support"
+          width={300} // Adjust the width as needed
+          height={300} // Adjust the height as needed
+          className={styles["support-image"]}
+        />
+      </div>
       {/* Render the Searchbar component */}
       <Searchbar
         onSearch={handleSearch}

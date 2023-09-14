@@ -1,0 +1,35 @@
+/* support.module.css */
+
+.support-container {
+  background-color: #fff;
+  min-height: 100vh;
+  text-align: center;
+  padding: 1rem;
+}
+
+.support-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.support-description {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+
+.link-list {
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.link-item {
+  margin: 1rem 0;
+}
+
+.link-button {
+  text-decoration: none;
+  color: #0070f3;
+  font-weight: bold;
+  cursor: pointer;
+}
