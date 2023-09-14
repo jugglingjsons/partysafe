@@ -1,6 +1,6 @@
 import React from "react";
 import Library from "../components/library"; // Import the Library component
-import "../styles/library.module.css";
+import "../../src/styles/Library.module.css";
 
 export default function LibraryPage() {
   return (

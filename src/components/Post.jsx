@@ -1,7 +1,7 @@
 // Post.jsx
 
 import React, { useState } from "react";
-import styles from "../../src/styles/dialogues.module.css";
+import styles from "../styles/Dialogues.module.css";
 
 const Post = ({ post, onEdit, onDelete }) => {
   const [isEditing, setIsEditing] = useState(false);
