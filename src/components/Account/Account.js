@@ -1,33 +1,9 @@
+// components/Account.js
 import React from "react";
-import { useSession, getSession } from "next-auth/react";
-import axios from "axios";
-import ViewOrder from "@/components/Account/ViewOrder";
-import Reorder from "@/components/Account/Reorder";
-import EditNewsletter from "@/components/Account/EditNewsletterSubscription";
-import EditBillingAddress from "@/components/Account/EditBillingAddress";
-import EditShippingAddress from "@/components/Account/EditShippingAddress";
+import { useSession } from "next-auth/react";
 
 const Account = () => {
   const { data: session, status } = useSession();
-
-  const handleViewOrder = async (orderId) => {
-    try {
-      const response = await axios.get(`/api/orders/${orderId}`, {
-        headers: {
-          Authorization: `Bearer ${session.accessToken}`,
-        },
-      });
-
-      if (response.status === 200) {
-        // Handle the response and display the order details
-        console.log("Order Details:", response.data);
-      } else {
-        console.error("Failed to fetch order:", response.statusText);
-      }
-    } catch (error) {
-      console.error("Error fetching order:", error);
-    }
-  };
 
   if (status === "authenticated") {
     return (
@@ -43,12 +19,7 @@ const Account = () => {
             <p>Receiver: John Doe</p>
             <p>Order Amount: $100.00</p>
             <p>Status: Shipped</p>
-            <button
-              className="action-button view-button"
-              onClick={() => handleViewOrder(12345)} // Replace 12345 with the actual order ID
-            >
-              View Order
-            </button>
+            <button className="action-button view-button">View Order</button>
             <button className="action-button reorder-button">Reorder</button>
           </div>
         </div>
@@ -108,19 +79,3 @@ const Account = () => {
 };
 
 export default Account;
-
-export const getServerSideProps = async (context) => {
-  const session = await getSession(context);
-  if (!session) {
-    return {
-      redirect: {
-        destination: "/login",
-        permanent: false,
-      },
-    };
-  }
-
-  return {
-    props: { session },
-  };
-};

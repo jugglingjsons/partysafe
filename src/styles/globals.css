@@ -158,3 +158,17 @@ body {
 .back-link:hover {
   color: #0056b3; /* Change to your desired hover color */
 }
+
+/* Add this CSS to your stylesheets */
+.delete-button {
+  background-color: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Add this transition for color change */
+}
+
+.delete-button:hover {
+  color: darkred; /* Change the color on hover */
+}
+3

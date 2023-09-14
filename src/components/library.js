@@ -56,8 +56,8 @@ export default function Library({ drugLibraryData }) {
       <h1>Drug Library</h1>
       <div className={styles["image-container"]}>
         <Image
-          src="/support.png" // Replace with your image source
-          alt="Support"
+          src="/pills-drug-matrix.gif" // Replace with your image source
+          alt="Pills Drug Matrix"
           width={300} // Adjust the width as needed
           height={300} // Adjust the height as needed
           className={styles["support-image"]}
