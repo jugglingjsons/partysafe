@@ -75,7 +75,7 @@ export default function Home() {
         <Searchbar
           onSearch={handleSearch}
           onClear={handleClear}
-          placeholder="Search drug kits..."
+          placeholder="Search drug testing kits..."
           searchText={searchQuery}
         />
       )}
