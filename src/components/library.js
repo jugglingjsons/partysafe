@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "../styles/Library.module.css";
 import Searchbar from "@/components/ui/Searchbar";
 import Chatbot from "react-chatbot-kit";
+// import Chatbot from "@/components/bot/Chatbot";
 import config from "../components/bot/config";
 import MessageParser from "../components/bot/MessageParser";
 import ActionProvider from "../components/bot/ActionProvider";
@@ -60,12 +61,11 @@ export default function Library({ drugLibraryData }) {
         placeholder="Search a drug..."
       />
 
-      {/* Render the DrugMaster Chatbot component */}
+      {/* Render the DrugMaster Chatbot component
       <Chatbot
-        config={config}
-        messageParser={MessageParser}
-        actionProvider={ActionProvider}
-      />
+        botName="DrugMaster"
+        chatIcon={<img src="/favicon.ico" alt="Pill Icon" />}
+      /> */}
 
       <div className={styles.cardContainer}>
         {searchResults.slice(0, displayCount).map((drug) => (
@@ -89,11 +89,17 @@ export default function Library({ drugLibraryData }) {
         {searchResults.length > 3 && (
           <div className={styles.viewButtonContainer}>
             {displayCount < searchResults.length ? (
-              <button className={styles.viewButton} onClick={handleViewMore}>
+              <button
+                className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ${styles.viewButton}`}
+                onClick={handleViewMore}
+              >
                 View More
               </button>
             ) : (
-              <button className={styles.viewButton} onClick={handleViewLess}>
+              <button
+                className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ${styles.viewButton}`}
+                onClick={handleViewLess}
+              >
                 View Less
               </button>
             )}

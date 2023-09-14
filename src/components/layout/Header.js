@@ -88,8 +88,9 @@ const Header = () => {
               <Image
                 src="/newlogo2.png"
                 alt="PartySafe Logo"
-                width={250}
-                height={250}
+                width={16776000}
+                height={16776000}
+                priority={true} // Load the logo first
               />
             </div>
           </Link>
@@ -168,6 +169,7 @@ const Header = () => {
           }}
           width={800} // Adjusted the width and height
           height={400} // Adjusted the width and height
+          priority={true} // Load the image as soon as the page loads
         />
       </div>
     </>

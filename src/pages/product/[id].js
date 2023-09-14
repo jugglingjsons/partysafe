@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
+import styles from "../../styles/ProductDetails.module.css"; // Import the CSS module
+
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function ProductDetailsPage() {
@@ -84,46 +86,42 @@ export default function ProductDetailsPage() {
   if (!product) return <div>Loading...</div>;
 
   return (
-    <div className="product-details-container">
-      {/* <header className="product-header">
-        <p onClick={() => router.back()} className="back-link">
-          Back
-        </p>
-        <ShoppingCartIcon className="cart-icon" />
-        <span className="cart-count">{cartCount}</span>
-      </header> */}
-
-      <div className="product-content">
-        <div className="product-image-container">
-          <LikeButton isLiked={isLiked} onLikeClick={handleLikeClick} />
-          <Image
-            src={product.image_url}
-            alt={product.name}
-            width={300}
-            height={300}
-            objectFit="contain"
-          />
-          <div className="price-container">
-            <h2 className="product-name">{product.name}</h2>
-            <p className="product-price">{product.price}€</p>
-            <button onClick={handleAddToCart} className="add-to-cart-button">
-              <ShoppingCartIcon className="add-to-cart-icon" />
-              <span className="cart-count">{cartCount}</span>
-              <h1> </h1>
-              Add to cart
-            </button>
+    <div className={styles.productDetailsContainer}>
+      <div className={styles.productContent}>
+        <div className={styles.productImageContainer}>
+          <div className={styles.likeButtonContainer}>
+            <LikeButton isLiked={isLiked} onLikeClick={handleLikeClick} />
+          </div>
+          <div className={styles.imageWrapper}>
+            <Image
+              src={product.image_url}
+              alt={product.name}
+              width={300}
+              height={300}
+              className={styles.productImage}
+            />
           </div>
         </div>
 
-        <div className="product-description">
-          <h3 className="section-title">Description:</h3>
-          <p>{product.description}</p>
+        <div className={styles.priceContainer}>
+          <h2 className={styles.productName}>{product.name}</h2>
+          <p className={styles.productPrice}>{product.price}€</p>
+          <button onClick={handleAddToCart} className={styles.addToCartButton}>
+            <ShoppingCartIcon className={styles.addToCartIcon} />
+            <span className={styles.cartCount}>{cartCount}</span>
+            Add to cart
+          </button>
         </div>
+      </div>
 
-        <div className="product-instructions">
-          <h3 className="section-title">Instructions:</h3>
-          <p>{product.instructions}</p>
-        </div>
+      <div className={styles.productDescription}>
+        <h3 className={styles.sectionTitle}>Description:</h3>
+        <p>{product.description}</p>
+      </div>
+
+      <div className={styles.productInstructions}>
+        <h3 className={styles.sectionTitle}>Instructions:</h3>
+        <p>{product.instructions}</p>
       </div>
     </div>
   );
