@@ -3,20 +3,21 @@
 @tailwind utilities;
 
 body {
-  color: #333;  /* Dark Grey Text */
+  color: #333; /* Dark Grey Text */
   background-color: #ffffff; /* White Background */
-  font-family: 'Georgia', serif; /* Classic font */
+  font-family: "Georgia", serif; /* Classic font */
   line-height: 1.6; /* Improved readability */
 }
 
-
 .product-name, /* directly targeting product name */
-h1, h2, h3, h4, h5, h6 { /* targeting all headers, assuming product name could be any of these */
-  color: #333;  /* Dark Grey Text */
+h1, h2, h3, h4, h5, h6 {
+  /* targeting all headers, assuming product name could be any of these */
+  color: #333; /* Dark Grey Text */
 }
 
 /* Make sure inputs and buttons are more touch-friendly on mobile */
-input, button {
+input,
+button {
   padding: 12px;
   font-size: 16px;
 }
@@ -131,3 +132,29 @@ body {
   /* Styles for your homepage content */
 }
 
+* Styles for the "Add to cart" button */ .add-to-cart-button {
+  background-color: #007bff; /* Change to your desired background color */
+  color: #fff; /* Change to your desired text color */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.add-to-cart-button:hover {
+  background-color: #0056b3; /* Change to your desired hover color */
+  transform: scale(1.05); /* Increase the size on hover */
+}
+
+/* Styles for the "Back" link */
+.back-link {
+  color: #007bff; /* Change to your desired text color */
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: #0056b3; /* Change to your desired hover color */
+}

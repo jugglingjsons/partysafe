@@ -8,6 +8,18 @@ export const authOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      profile(profile) {
+        return {
+          id: profile.sub,
+          email: profile.email,
+          name: profile.name,
+          userName: profile.login,
+          favorites: [],
+          cart: [],
+          image: profile.avatar_url,
+          admin: false,
+        };
+      },
     }),
   ],
   adapter: MongoDBAdapter(clientPromise),
@@ -16,30 +28,17 @@ export const authOptions = {
   // Optional SQL or MongoDB database to persist users
   callbacks: {
     async signIn(data) {
-      console.log('signIn', data);
       return true;
-    },
-    async profile(profile) {
-      return {
-        id: profile.id,
-        email: profile.email,
-        name: profile.name,
-        userName: profile.login,
-        githubId: profile.id,
-        image: profile.avatar_url,
-        admin: false,
-      };
     },
     async session({ session, user, token }) {
       if (session?.user) {
         session.user.id = user.id;
-        session.user.githubId = user.githubId;
-        session.user.email = user.email;
-        session.user.admin = user.admin;
+        session.user.cart = user.cart;
+        session.user.favorites = user.favorites;
       }
       return session;
     },
   },
-};
+  }; 
 
 export default NextAuth(authOptions);

@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Drugkit from "./drugkit.js";
+import Drugkit from "../models/Drugkit.js";
 
 const { Schema } = mongoose;
 
@@ -9,9 +9,8 @@ const userSchema = new Schema({
   email: { type: String, required: true, unique: true },
   image: { type: String, required: true }, // Corrected field name
   userId: { type: String, required: true }, // Adjust the data type if needed
-  cart: [{ type: Schema.Types.ObjectId, ref: 'Drugkit' }],
-  type: { type: String, required: true },
-  favorites: [{ type: Schema.Types.ObjectId, ref: 'Drugkit' }],
+  cart: [{ type: Schema.Types.ObjectId, ref: "Drugkit" }],
+  favorites: [{ type: Schema.Types.ObjectId, ref: "Drugkit" }],
 });
 
 const User = mongoose.models.User || mongoose.model("User", userSchema);

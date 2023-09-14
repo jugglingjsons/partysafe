@@ -1,89 +1,128 @@
-import LikeButton from '@/components/ui/LikeButton';
-import { ShoppingCartIcon } from '@heroicons/react/solid';
-import { useRouter } from 'next/router';
-import useSWR from 'swr';
-import { useState } from 'react';
-import Image from 'next/image'; // Import the Image component
+import React, { useEffect, useState } from "react";
+import LikeButton from "@/components/ui/LikeButton";
+import { ShoppingCartIcon } from "@heroicons/react/solid";
+import { useRouter } from "next/router";
+import useSWR from "swr";
+import Image from "next/image";
+import { useSession } from "next-auth/react";
+import styles from "../../styles/ProductDetails.module.css"; // Import the CSS module
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function ProductDetailsPage() {
+  const { data: session } = useSession();
   const router = useRouter();
   const { id } = router.query;
   const [cartCount, setCartCount] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
+  const [product, setProduct] = useState(null);
 
-  // Fetch product details using SWR
-  const { data: product, error } = useSWR(`/api/drugkit/${id}`, fetcher);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`/api/drugkit/${id}`);
+        if (response.ok) {
+          const data = await response.json();
+          setProduct(data);
+        } else {
+          console.error("Failed to fetch product details");
+        }
+      } catch (error) {
+        console.error("Error fetching product details:", error);
+      }
+    };
 
-  // Handle errors and loading state
-  if (error) return <div>Error loading product details</div>;
-  if (!product) return <div>Loading...</div>;
+    fetchData();
+  }, [id]);
 
-  // Function to handle like button click
-  const handleLikeClick = (isLiked) => {
-    console.log(`Product liked: ${isLiked}`);
-  };
-
-  // Function to add the product to the cart
-  const handleAddToCart = async () => {
-    const itemId = product._id; // Assuming product._id is the ID of the added product
-    const quantity = 1; // You can adjust the quantity as needed
+  const handleLikeClick = async (isLiked) => {
+    if (!product) return;
+    const productId = product._id;
 
     try {
-      const response = await fetch('/api/cart/add', {
-        method: 'POST',
+      const response = await fetch(`/api/favorites/${productId}`, {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ itemId, quantity }),
+        body: JSON.stringify({ productId, isLiked }),
+      });
+
+      if (response.ok) {
+        setIsLiked(isLiked);
+      } else {
+        console.error("Failed to like/unlike the product");
+      }
+    } catch (error) {
+      console.error("Error liking/unliking the product:", error);
+    }
+  };
+
+  const handleAddToCart = async () => {
+    if (!product || !session) return;
+    const itemId = id;
+    const userId = session.user.id;
+    const quantity = 1;
+
+    try {
+      const response = await fetch("/api/cart/add", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ itemId, userId, quantity }),
       });
 
       if (response.ok) {
         setCartCount(cartCount + 1);
-        console.log('Item added to cart successfully');
       } else {
-        console.error('Failed to add item to cart');
+        console.error("Failed to add item to cart");
       }
     } catch (error) {
-      console.error('Error adding item to cart:', error);
+      console.error("Error adding item to cart:", error);
     }
   };
 
-  return (
-    <div style={{ padding: '20px' }}>
-      {/* Header */}
-      <header style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-        <p style={{ flex: 1, textAlign: 'left', cursor: 'pointer' }} onClick={() => router.back()}>Back</p>
-        <ShoppingCartIcon className="h-6 w-6" style={{ marginRight: '10px' }} />
-        <span>{cartCount}</span>
-      </header>
+  if (!product) return <div>Loading...</div>;
 
-      {/* Product Image */}
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <Image
-          src={product.image_url}
-          alt={product.name}
-          width={300}
-          height={300}
-          objectFit="contain"
-        />
+  return (
+    <div className={styles.productDetailsContainer}>
+      <div className={styles.productContent}>
+        <div className={styles.productImageContainer}>
+          <div className={styles.likeButtonContainer}>
+            <LikeButton isLiked={isLiked} onLikeClick={handleLikeClick} />
+          </div>
+          <div className={styles.imageWrapper}>
+            <Image
+              src={product.image_url}
+              alt={product.name}
+              width={300}
+              height={300}
+              className={styles.productImage}
+            />
+          </div>
+        </div>
+
+        <div className={styles.priceContainer}>
+          <h2 className={styles.productName}>{product.name}</h2>
+          <p className={styles.productPrice}>{product.price}€</p>
+          <button onClick={handleAddToCart} className={styles.addToCartButton}>
+            <ShoppingCartIcon className={styles.addToCartIcon} />
+            <span className={styles.cartCount}>{cartCount}</span>
+            Add to cart
+          </button>
+        </div>
       </div>
 
-      {/* Product Details */}
-      <div style={{ textAlign: 'center', padding: '20px' }}>
-        <h2>{product.name}</h2>
-        <p>Description: {product.description}</p>
-        <p>Price: {product.price}</p>
+      <div className={styles.productDescription}>
+        <h3 className={styles.sectionTitle}>Description:</h3>
+        <p>{product.description}</p>
+      </div>
 
-        {/* Like Button */}
-        <LikeButton isLiked={false} onLikeClick={handleLikeClick} />
-
-        {/* Add to Cart Button */}
-        <div>
-          <button onClick={handleAddToCart} style={{ marginRight: '10px' }}>Add to cart</button>
-        </div>
+      <div className={styles.productInstructions}>
+        <h3 className={styles.sectionTitle}>Instructions:</h3>
+        <p>{product.instructions}</p>
       </div>
     </div>
   );
 }
-

@@ -1,40 +1,58 @@
-import dbConnect from '../../../../Db/DbConnect'; // Import your database connection
-import User from '../../../../Db/models/User'; // Import your user model
+import dbConnect from "../../../../Db/DbConnect";
+import User from "../../../../Db/models/User";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../auth/[...nextauth]";
 
-export default async function handler(request, response) {
-    try {
-      await dbConnect(); // Connect to your MongoDB database
-  
-      if (request.method === 'GET') {
-        // Handle GET request here
-        const productId = request.query.id;
-  
-        // Implement logic to retrieve favorites for the given product ID
-        const user = await User.findOne({ favorites: productId });
-  
-        if (!user) {
-          return response.status(404).json({ message: 'Favorites not found' });
-        }
-  
-        return response.status(200).json({ favorites: user.favorites });
-      } else if (request.method === 'POST') {
-        // Handle POST request here
-        const productId = request.query.id;
-  
-        // Implement logic to add the product to the user's favorites
-        // You can get the user's ID from the session
-        // For simplicity, let's assume the user's ID is "userId"
-        const userId = 'userId';
-  
-        // Add the product to the user's favorites
-        await User.findByIdAndUpdate(userId, { $addToSet: { favorites: productId } });
-  
-        return response.status(200).json({ message: 'Product added to favorites' });
-      } else {
-        return response.status(405).json({ message: 'Method not allowed' });
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      return response.status(500).json({ message: 'Server error' });
-    }
+export default async function handler(req, res) {
+  const session = await getServerSession(req, res, authOptions);
+  const userId = session.user.id;
+  if (!session) {
+    return res.status(401).json({ message: "Unauthorized" });
   }
+
+  await dbConnect();
+  if (req.method === "PATCH") {
+    const drugkitId = req.query.id;
+
+    const user = await User.findByIdAndUpdate(
+      userId,
+      [
+        {
+          $set: {
+            favorites: {
+              $cond: {
+                if: { $in: [drugkitId, "$favorites"] },
+                then: { $setDifference: ["$favorites", [drugkitId]] },
+                else: { $concatArrays: ["$favorites", [drugkitId]] },
+              },
+            },
+          },
+        },
+      ],
+      { new: true }
+    );
+    return res.status(200).json(user.favorites);
+  }
+
+  try {
+    if (req.method === "POST") {
+      // Update the user's document by pushing drugkitId to favorites array
+      const updatedUser = await User.findByIdAndUpdate(
+        userId,
+        { $push: { favorites: drugkitId } },
+        { new: true }
+      );
+
+      if (!updatedUser) {
+        return res.status(404).json({ message: "User not found" });
+      }
+
+      return res.status(200).json({ message: "Drugkit added to favorites" });
+    } else {
+      return res.status(405).json({ message: "Method not allowed" });
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
+}
