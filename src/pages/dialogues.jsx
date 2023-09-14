@@ -1,7 +1,7 @@
 // Dialogues.jsx
 
 import React, { useState, useEffect } from "react";
-import styles from "../../src/styles/dialogues.module.css";
+import styles from "../../src/styles/Dialogues.module.css";
 import Post from "../components/Post"; // Import the Post component
 
 const tags = [

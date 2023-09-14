@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
-import Cart from "../components/Cart";
+import Cart from "../../src/components/cart";
 
 export default function CartPage() {
   const { data: user } = useSession();
