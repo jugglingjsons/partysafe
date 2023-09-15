@@ -1,16 +1,16 @@
 // models/Post.js
-const mongoose = require('mongoose');
+import { Schema, models, model } from "mongoose";
 
-const postSchema = new mongoose.Schema(
-    {
-        content: {
-            type: String,
-            required: true,
-        },
+const postSchema = new Schema(
+  {
+    content: {
+      type: String,
+      required: true,
     },
-    {
-        timestamps: true,
-    }
+  },
+  {
+    timestamps: true,
+  }
 );
 
-module.exports = mongoose.models.Post || mongoose.model('Post', postSchema);
+export default models.Post || model("Post", postSchema);

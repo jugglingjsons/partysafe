@@ -26,6 +26,17 @@ const Dialogues = () => {
   const [newPost, setNewPost] = useState("");
   const [selectedTags, setSelectedTags] = useState([]);
 
+  const handleTagClick = (tag) => {
+    // Toggle tag selection
+    if (selectedTags.includes(tag)) {
+      setSelectedTags(
+        selectedTags.filter((selectedTag) => selectedTag !== tag)
+      );
+    } else {
+      setSelectedTags([...selectedTags, tag]);
+    }
+  };
+
   const handlePostSubmit = async () => {
     if (newPost.trim() !== "") {
       try {
@@ -50,6 +61,101 @@ const Dialogues = () => {
       }
     }
   };
+
+  // Placeholder data for posts, replace with actual data from your API
+  const placeholderPosts = [
+    {
+      _id: "1",
+      content: "This is the first post content.",
+      tags: ["BadTrip"],
+    },
+    {
+      _id: "2",
+      content: "This is the second post content.",
+      tags: ["Overdose"],
+    },
+    {
+      _id: "3",
+      content: "This is the third post content.",
+      tags: ["MixedUsed"],
+    },
+    {
+      _id: "4",
+      content: "This is the fourth post content.",
+      tags: ["LSD"],
+    },
+    {
+      _id: "5",
+      content: "This is the fifth post content.",
+      tags: ["Addiction"],
+    },
+    {
+      _id: "6",
+      content: "This is the sixth post content.",
+      tags: ["DrugTestingKit"],
+    },
+    {
+      _id: "7",
+      content: "This is the seventh post content.",
+      tags: ["Counseling"],
+    },
+    {
+      _id: "8",
+      content: "This is the eighth post content.",
+      tags: ["Drugs"],
+    },
+    {
+      _id: "9",
+      content: "This is the ninth post content.",
+      tags: ["Effect"],
+    },
+    {
+      _id: "10",
+      content: "This is the ninth post content.",
+      tags: ["Dosage"],
+    },
+    {
+      _id: "11",
+      content: "This is the ninth post content.",
+      tags: ["SideEffect"],
+    },
+    {
+      _id: "12",
+      content: "This is the ninth post content.",
+      tags: ["SexUse"],
+    },
+    {
+      _id: "13",
+      content: "This is the ninth post content.",
+      tags: ["Risk"],
+    },
+    {
+      _id: "14",
+      content: "This is the ninth post content.",
+      tags: ["Recommendation"],
+    },
+  ];
+
+  useEffect(() => {
+    // Simulate loading posts from an API based on selected tags
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch(
+          `/api/dialogues?tags=${selectedTags.join(",")}`
+        );
+        if (response.ok) {
+          const postData = await response.json();
+          setPosts(postData);
+        } else {
+          console.error("Failed to fetch posts:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+      }
+    };
+
+    fetchPosts();
+  }, [selectedTags]);
 
   const handleEditPost = async (id, newContent) => {
     try {
@@ -96,11 +202,14 @@ const Dialogues = () => {
     <div className={styles.dialoguesContainer}>
       <h1 className="text-center my-4">Anonymous Dialogue</h1>
       <div className={styles.tagButtons}>
-        {/* Add your tags buttons here */}
+        {/* Render tag buttons and handle tag selection */}
         {tags.map((tag, index) => (
           <button
             key={index}
-            className="bg-gray-300 text-gray-700 py-1 px-2 rounded mr-2"
+            className={`bg-gray-300 text-gray-700 py-1 px-2 rounded mr-2 ${
+              selectedTags.includes(tag) ? "bg-blue-500 text-white" : ""
+            }`}
+            onClick={() => handleTagClick(tag)} // Add this click handler
           >
             {tag}
           </button>

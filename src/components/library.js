@@ -69,13 +69,16 @@ export default function Library({ drugLibraryData }) {
         onClear={handleClear}
         placeholder="Search a drug..."
       />
-
-      {/* Render the DrugMaster Chatbot component
+      Render the DrugMaster Chatbot component
       <Chatbot
         botName="DrugMaster"
-        chatIcon={<img src="/favicon.ico" alt="Pill Icon" />}
-      /> */}
-
+        chatIcon={
+          <img
+            src="/icons8-rick-sanchez-color/icons8-rick-sanchez-480.svg"
+            alt="Pill Icon"
+          />
+        }
+      />
       <div className={styles.cardContainer}>
         {searchResults.slice(0, displayCount).map((drug) => (
           <Link

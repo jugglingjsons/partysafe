@@ -1,34 +1,49 @@
-import { signIn, useSession } from "next-auth/react";
+import { signIn, useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import AuthAnimation from "../components/AuthAnimation"; // Replace with the correct path
+import { EmojiHappyIcon } from "@heroicons/react/solid";
 
 const Login = () => {
   const router = useRouter();
   const { data: session } = useSession(); // Get the session data
 
-  const handleSignIn = async () => {
+  const handleSignIn = async (provider) => {
     // Perform sign-in logic here, e.g., using signIn from next-auth
-    const result = await signIn("google"); // Replace 'google' with your authentication provider
+    const result = await signIn(provider); // Use the specified provider (e.g., 'google' or 'facebook')
 
     if (result?.error) {
       // Handle sign-in error
       console.error("Sign-in error:", result.error);
-    } else {
-      // Check if the user is logged in (session exists) before redirecting
-      if (session) {
-        // Redirect to the account page after successful sign-in
-        router.push("/account");
-      } else {
-        // Handle the case where the user is not logged in
-      }
+    } else if (result?.url) {
+      // Redirect to the authentication provider (e.g., Google)
+      window.location.href = result.url;
+    } else if (session?.user) {
+      // If the user is logged in, redirect to the account page
+      router.push("/account");
     }
   };
 
   return (
     <div>
       <AuthAnimation />
-      <h1>Login Page</h1>
-      <button onClick={handleSignIn}>Sign in with Google</button>
+      {session?.user ? (
+        // Display welcome message and redirect to account page if user is logged in
+        <div>
+          <p>Hello {session.user.name}</p>
+          <p> Welcome to PartySafe</p>
+          <EmojiHappyIcon className="h-6 w-6 text-black-300" />
+        </div>
+      ) : (
+        // Display sign-in buttons for different providers
+        <>
+          <button onClick={() => handleSignIn("google")}>
+            Sign in with Google
+          </button>
+          <button onClick={() => handleSignIn("facebook")}>
+            Sign in with Facebook
+          </button>
+        </>
+      )}
     </div>
   );
 };
