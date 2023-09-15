@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
-import Cart from "../components/Cart";
+import Cart from "../components/cart.js";
 import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe(
