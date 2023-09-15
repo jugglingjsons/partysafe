@@ -45,7 +45,10 @@ export default function ProductDetailsPage() {
   }, [id]);
 
   const handleLikeClick = async (product) => {
-    if (!product) return;
+    if (!product || !session) {
+      router.push("/login");
+      return;
+    }
     const productId = product._id;
 
     try {
@@ -67,7 +70,11 @@ export default function ProductDetailsPage() {
   };
 
   const handleAddToCart = async () => {
-    if (!product || !session) return;
+    if (!product || !session) {
+      router.push("/login");
+      return;
+    }
+
     const itemId = id;
     const userId = session.user.id;
     const quantity = 1;

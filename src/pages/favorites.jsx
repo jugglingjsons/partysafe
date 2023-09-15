@@ -47,7 +47,7 @@ export default function Favorites() {
       <main className="p-4 grid grid-cols-3 gap-4">
         {userData.favorites.map((product) => (
           <div key={product._id} className="border p-2 rounded">
-            <Link href={`/drugkit/${product.productId}`}>
+            <Link href={`/product/${product._id}`}>
               <h2 className="text-center mb-2">{product.name}</h2>
             </Link>
             <Image

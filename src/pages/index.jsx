@@ -58,6 +58,10 @@ export default function Home() {
   }, [searchQuery, products]);
 
   const toggleLike = async (product) => {
+    if (!product || !session) {
+      router.push("/login");
+      return;
+    }
     const favoritesInfo = { userid: session.user.id };
 
     const response = await fetch(`/api/favorites/${product._id}`, {
