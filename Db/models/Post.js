@@ -7,6 +7,10 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
+    tag: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,

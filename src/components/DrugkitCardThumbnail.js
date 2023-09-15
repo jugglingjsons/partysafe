@@ -3,12 +3,9 @@ import React from "react";
 import Image from "next/image";
 import { HeartIcon } from "@heroicons/react/solid";
 import Link from "next/link";
+import LikeButton from "./ui/LikeButton";
 
-const DrugkitCardThumbnail = ({ drugkit, onLike, likedProducts }) => {
-  const isLiked =
-    Array.isArray(likedProducts) &&
-    likedProducts.some((like) => like._id === drugkit._id);
-
+const DrugkitCardThumbnail = ({ drugkit, onLike, liked }) => {
   return (
     <div className="border p-2 rounded relative bg-white shadow-lg">
       <h2 className="text-center mb-2">{drugkit.name}</h2>
@@ -25,14 +22,7 @@ const DrugkitCardThumbnail = ({ drugkit, onLike, likedProducts }) => {
           </div>
         </div>
       </Link>
-      <button
-        className="absolute bottom-4 left-4"
-        onClick={() => onLike(drugkit)}
-      >
-        <HeartIcon
-          className={`h-5 w-5 ${isLiked ? "text-red-500" : "text-gray-500"}`}
-        />
-      </button>
+      <LikeButton isLiked={liked} onClick={() => onLike(drugkit)} />
     </div>
   );
 };

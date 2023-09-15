@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, use } from "react";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import Searchbar from "@/components/ui/Searchbar";
 import DrugkitCardThumbnail from "../components/DrugkitCardThumbnail";
 import { useSession } from "next-auth/react";
+import { HeartIcon } from "@heroicons/react/solid";
+import LikeButton from "@/components/ui/LikeButton";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -15,9 +17,16 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState(
     "Search your kit in the search bar"
   );
+  const [userFavorites, setUserFavorites] = useState([]);
   const router = useRouter();
   const isDialoguePage = router.pathname === "/dialogue";
   const { data: session, loadingSession } = useSession();
+
+  useEffect(() => {
+    if (session?.user) {
+      setUserFavorites(session.user.favorites);
+    }
+  }, [session]);
 
   useEffect(() => {
     async function fetchData() {
@@ -49,6 +58,10 @@ export default function Home() {
   }, [searchQuery, products]);
 
   const toggleLike = async (product) => {
+    if (!product || !session) {
+      router.push("/login");
+      return;
+    }
     const favoritesInfo = { userid: session.user.id };
 
     const response = await fetch(`/api/favorites/${product._id}`, {
@@ -88,8 +101,7 @@ export default function Home() {
               key={product._id}
               drugkit={product}
               onLike={toggleLike}
-              // Pass the liked status as a prop
-              liked={likedProducts.some((like) => like._id === product._id)}
+              liked={userFavorites.includes(product._id)}
             />
           ))
         )}

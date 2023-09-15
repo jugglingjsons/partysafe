@@ -11,6 +11,18 @@ export default function Favorites() {
   const { data: session, loadingSession } = useSession();
   const userId = session?.user?.id; // Get the user ID from the session
 
+  // Toggle the liked status of a product
+  const toggleLike = async (product) => {
+    const favoritesInfo = { userid: session.user.id };
+
+    const response = await fetch(`/api/favorites/${product._id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  };
+
   // Fetch user data with favorites populated
   const { data: userData, error: userError } = useSWR(
     userId ? `/api/user/${userId}` : null,
@@ -35,7 +47,7 @@ export default function Favorites() {
       <main className="p-4 grid grid-cols-3 gap-4">
         {userData.favorites.map((product) => (
           <div key={product._id} className="border p-2 rounded">
-            <Link href={`/drugkit/${product.productId}`}>
+            <Link href={`/product/${product._id}`}>
               <h2 className="text-center mb-2">{product.name}</h2>
             </Link>
             <Image
@@ -46,7 +58,7 @@ export default function Favorites() {
             />
             <LikeButton
               isLiked={true} // Set the liked status based on the fact that it's in favorites
-              onLikeClick={() => toggleLike(product._id)}
+              onLikeClick={() => toggleLike(product)}
             />
           </div>
         ))}

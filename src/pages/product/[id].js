@@ -16,6 +16,14 @@ export default function ProductDetailsPage() {
   const [cartCount, setCartCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
   const [product, setProduct] = useState(null);
+  const [userFavorites, setUserFavorites] = useState([]);
+
+  useEffect(() => {
+    if (session?.user) {
+      console.log("session.user.favorites", session.user.favorites);
+      setUserFavorites(session.user.favorites);
+    }
+  }, [session]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,6 +31,7 @@ export default function ProductDetailsPage() {
         const response = await fetch(`/api/drugkit/${id}`);
         if (response.ok) {
           const data = await response.json();
+          console.log("data", data);
           setProduct(data);
         } else {
           console.error("Failed to fetch product details");
@@ -35,17 +44,19 @@ export default function ProductDetailsPage() {
     fetchData();
   }, [id]);
 
-  const handleLikeClick = async (isLiked) => {
-    if (!product) return;
+  const handleLikeClick = async (product) => {
+    if (!product || !session) {
+      router.push("/login");
+      return;
+    }
     const productId = product._id;
 
     try {
-      const response = await fetch(`/api/favorites/${productId}`, {
-        method: "POST",
+      await fetch(`/api/favorites/${product._id}`, {
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ productId, isLiked }),
       });
 
       if (response.ok) {
@@ -59,7 +70,11 @@ export default function ProductDetailsPage() {
   };
 
   const handleAddToCart = async () => {
-    if (!product || !session) return;
+    if (!product || !session) {
+      router.push("/login");
+      return;
+    }
+
     const itemId = id;
     const userId = session.user.id;
     const quantity = 1;
@@ -90,7 +105,10 @@ export default function ProductDetailsPage() {
       <div className={styles.productContent}>
         <div className={styles.productImageContainer}>
           <div className={styles.likeButtonContainer}>
-            <LikeButton isLiked={isLiked} onLikeClick={handleLikeClick} />
+            <LikeButton
+              isLiked={userFavorites.includes(product._id)}
+              onClick={() => handleLikeClick(product)}
+            />
           </div>
           <div className={styles.imageWrapper}>
             <Image
