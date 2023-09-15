@@ -1,4 +1,4 @@
-const stripe = require("../../utils/stripe"); // Import your Stripe instance
+const stripe = require("../../../utils/stripe"); // Import your Stripe instance
 const { NextApiRequest, NextApiResponse } = require("next");
 
 module.exports = async function handler(req, res) {
