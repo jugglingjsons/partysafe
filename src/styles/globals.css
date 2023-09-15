@@ -128,11 +128,8 @@ body {
   /* Additional logo styling, e.g., font-family, colors, etc. */
 }
 
-.homepage-content {
-  /* Styles for your homepage content */
-}
-
-* Styles for the "Add to cart" button */ .add-to-cart-button {
+.add-to-cart-button {
+  /* Styles for the "Add to cart" button */
   background-color: #007bff; /* Change to your desired background color */
   color: #fff; /* Change to your desired text color */
   border: none;
