@@ -1,5 +1,5 @@
 import { createChatBotMessage } from "react-chatbot-kit";
-
+import Image from "next/image";
 import MessageParser from "./MessageParser";
 import ActionProvider from "./ActionProvider";
 
@@ -11,7 +11,7 @@ const config = {
   ],
 
   customComponents: {
-    botAvatar: (props) => <img src="/favicon.ico" alt="Pill Icon" />,
+    botAvatar: (props) => <imageg src="/favicon.ico" alt="Pill Icon" />,
   },
 
   widgets: [
