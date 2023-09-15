@@ -22,12 +22,7 @@ const DrugkitCardThumbnail = ({ drugkit, onLike, liked }) => {
           </div>
         </div>
       </Link>
-      <button
-        className="absolute bottom-4 left-4"
-        onClick={() => onLike(drugkit)}
-      >
-        <LikeButton isLiked={liked} />
-      </button>
+      <LikeButton isLiked={liked} onClick={() => onLike(drugkit)} />
     </div>
   );
 };
