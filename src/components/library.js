@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "../styles/Library.module.css";
 import Searchbar from "@/components/ui/Searchbar";
-import Chatbot from "react-chatbot-kit";
-// import Chatbot from "@/components/bot/Chatbot";
+// import Chatbot from "react-chatbot-kit";
+import Chatbot from "@/components/bot/Chatbot";
 import config from "../components/bot/config";
 import MessageParser from "../components/bot/MessageParser";
 import ActionProvider from "../components/bot/ActionProvider";
@@ -70,15 +70,15 @@ export default function Library({ drugLibraryData }) {
         placeholder="Search a drug..."
       />
       Render the DrugMaster Chatbot component
-      <Chatbot
-        botName="DrugMaster"
-        chatIcon={
-          <img
+      <Chatbot>
+        botName="DrugMaster" chatIcon=
+        {
+          <Image
             src="/icons8-rick-sanchez-color/icons8-rick-sanchez-480.svg"
-            alt="Pill Icon"
+            alt="DrugMaster Rick Icon"
           />
         }
-      />
+      </Chatbot>
       <div className={styles.cardContainer}>
         {searchResults.slice(0, displayCount).map((drug) => (
           <Link
