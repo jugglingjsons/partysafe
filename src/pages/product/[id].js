@@ -107,6 +107,7 @@ export default function ProductDetailsPage() {
           <h2 className={styles.productName}>{product.name}</h2>
           <p className={styles.productPrice}>{product.price}€</p>
           <button onClick={handleAddToCart} className={styles.addToCartButton}>
+            handleAddToCart quantity: {cartCount}
             <ShoppingCartIcon className={styles.addToCartIcon} />
             <span className={styles.cartCount}>{cartCount}</span>
             Add to cart

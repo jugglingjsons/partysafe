@@ -1,12 +1,12 @@
 import { HeartIcon } from "@heroicons/react/outline";
 import { useState } from "react";
 
-const LikeButton = ({ isLiked, onLikeClick }) => {
+const LikeButton = ({ isLiked, onLikeClick, className }) => {
   const [liked, setLiked] = useState(isLiked);
 
   const toggleLike = async () => {
     setLiked(!liked);
-    onLikeClick(!liked);
+    // onLikeClick(!liked);
   };
 
   return (

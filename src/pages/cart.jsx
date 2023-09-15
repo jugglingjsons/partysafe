@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
-import Cart from "../../src/components/cart";
+import Cart from "../components/Cart";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(
+  "pk_test_51NqavvKp3y1ns7QoPyPGjpQonFypBjJn95bxIReYXZj3RTWLfbQTy9stHaspf725acrkvrIDiqg6neDqzrR23Hwf00G6baBcEO"
+);
 
 export default function CartPage() {
   const { data: user } = useSession();
@@ -41,15 +46,45 @@ export default function CartPage() {
     }
   };
 
-  const handleCompleteOrderCreditCard = async () => {
-    // Implement your order completion logic for Credit Card payment here
-  };
-
-  const handleCompleteOrderBitcoin = async () => {
-    // Implement your order completion logic for Bitcoin payment here
-  };
-
   const totalAmount = cartItems.reduce((total, item) => total + item.price, 0);
+
+  const handlePayment = async (paymentMethod) => {
+    const stripe = await stripePromise;
+    // Use Stripe elements and the Stripe API to handle the payment
+    // For example, create a PaymentIntent and confirm the payment
+    try {
+      // Create a PaymentIntent based on the payment method
+      const response = await fetch("/api/create-payment-intent", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          amount: totalAmount * 100, // Amount in cents
+          currency: "usd",
+          paymentMethod,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const result = await stripe.confirmCardPayment(data.clientSecret, {
+          payment_method: paymentMethod,
+        });
+
+        if (result.error) {
+          console.error("Payment failed:", result.error.message);
+        } else {
+          console.log("Payment succeeded:", result.paymentIntent.id);
+          // Handle successful payment here
+        }
+      } else {
+        console.error("Error creating PaymentIntent:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error handling payment:", error);
+    }
+  };
 
   return (
     <div>
@@ -57,13 +92,13 @@ export default function CartPage() {
       <div className="text-right">
         <p>Total Amount: €{totalAmount}</p>
         <button
-          onClick={handleCompleteOrderCreditCard}
+          onClick={() => handlePayment("card")}
           className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
         >
           Pay with Credit Card
         </button>
         <button
-          onClick={handleCompleteOrderBitcoin}
+          onClick={() => handlePayment("bitcoin")}
           className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded ml-2"
         >
           Pay with Bitcoin

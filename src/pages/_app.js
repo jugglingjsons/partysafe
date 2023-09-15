@@ -8,6 +8,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { appWithTranslation } from "next-i18next";
 
 function App({ Component, pageProps: { session, ...pageProps } }) {
+  // const toggleLike = async (product) => {
+  //   const favoritesInfo = { userid: session.user.id };
+
+  //   const response = await fetch(`/api/favorites/${product._id}`, {
+  //     method: "PATCH",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   });
+  // };
+
   return (
     <SessionProvider session={session}>
       <Head>
