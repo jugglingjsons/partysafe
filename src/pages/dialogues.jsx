@@ -50,6 +50,7 @@ const Dialogues = () => {
 
         if (response.ok) {
           const newPostData = await response.json();
+          console.log(newPostData)
           setPosts([...posts, newPostData]);
           setNewPost("");
           setSelectedTags([]);
@@ -145,6 +146,8 @@ const Dialogues = () => {
         );
         if (response.ok) {
           const postData = await response.json();
+          console.log(postData)
+
           setPosts(postData);
         } else {
           console.error("Failed to fetch posts:", response.statusText);

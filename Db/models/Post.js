@@ -7,10 +7,7 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
-    tag: {
-      type: String,
-      required: true,
-    },
+    tag: [{ type: String }],
   },
   {
     timestamps: true,
@@ -18,3 +15,13 @@ const postSchema = new Schema(
 );
 
 export default models.Post || model("Post", postSchema);
+
+export function PostValidator(post) {
+  if (!post.content) {
+  return false
+  }
+  if (!post.tag) {
+    return false
+  }
+  return true
+}
